@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+</html>
+	<head>
+	<!--
+	CIS166AA Chapter 1 Case Project
+	Author: Kevin Ward
+	Date: 8/27/2016
+	Filename: page2.html
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Kevin Ward's Case Project</title>
+		<link rel="stylesheet" href="styles.css" />
+		<!-- Adding modernizr JavaScript link. -->
+		<script src="modernizr.custom.05819.js"></script>
+	</head>
+	<body>
+		<div id="mainbody">
+			<header>
+				<h1>
+					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1" /></a>
+					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2" />
+					Star Wars
+				</h1>
+			</header>
+			
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li id="currpage"><a href="page2.html">Star Wars</a></li>
+					<li><a href="page3.html">Video Games</a></li>
+					<li><a href="page4.html">About Me</a></li>
+				</ul>
+			</nav>
+		
+		<aside>
+			<ul>
+				<li onclick="document.getElementById('toonImg').src = luke" id="luke">Luke Skywalker, Jedi</li>
+				<li onclick="document.getElementById('toonImg').src = leia" id="leia">Leia Organa, Senator</li>
+				<li onclick="document.getElementById('toonImg').src = vader" id="vader">Darth Vader, Sith</li>
+			</ul>	
+		</aside>
+		
+		<article>
+			<figure>
+				<img src="images/sw.jpg" width="720" height="480" alt"" title="" id="toonImg" />
+				<figcaption>
+					<script>
+						document.write("<p>All characters are copyright <a href='http://www.starwars.com'>Disney</a>.</p>");
+					</script>
+				</figcaption>
+			</figure>
+		</article>
+		
+		<footer>
+			<p>Kevin Ward 1981-2016</p>
+		</footer>
+		
+		</div>
+		<script src="javascript.js"></script>
+	</body>
+</html>

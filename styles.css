@@ -1,0 +1,248 @@
+/*
+CIS166AA: Chapter 1 Case Project
+Author: Kevin Ward
+Date: 08/28/2016
+
+Filename: styles.css
+*/
+
+
+/* apply a natural box layout model to all elements */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	max-width: 1080px;
+	background: darkgreen;
+	margin: 0 auto;
+	font-family: Verdana, Geneva, sans-serif; 
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* main body of the page */
+#mainbody {
+	background: green;
+}
+
+/* header of the page */
+header {
+	background: rgb(40,60,80);
+	width: 100%;
+	font-family: 'Verdana', bold;
+	color: rgb(13,177,75);
+	font-size: 70px;
+	text-align: right;
+	padding-right: 20px;
+	position: relative;
+}
+
+header #logo1 {
+	position: absolute;
+	top: -6px;
+	left: -10px;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	writing-mode: lr-tb;    
+}
+
+header #logo2 {
+	position: absolute;
+	top: 0;
+	left: 150px;
+}
+
+/* navigation of the page */
+nav {
+	background: rgb(50,34,99);
+	width: 100%;
+	font-size: 18px;
+}
+
+nav ul {
+	margin-left: 320px;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 10px 15px;
+	background: rgb(100,100,100);
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+/* the current page being displayed. */
+nav ul #currpage {
+	background: rgb(15,180,75);
+}
+
+/* sidebar */
+aside {
+	width: 360px;
+	float: left;
+	background: rgb(15,180,75);
+}
+
+aside ul {
+	padding: 10px;
+}
+
+aside ul li {
+	padding: 10px;
+	font-size: 24px;
+}
+
+#crest:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#courage:hover {
+	color: green;
+	background: rgb(0,0,0);
+}
+
+#wisdom:hover {
+	color: blue;
+	background: rgb(0,0,0);
+}
+
+#power:hover {
+	color: red;
+	background: rgb(0,0,0);
+}
+
+#luke:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#leia:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#vader:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#xal1:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#xal2:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+#xal3:hover {
+	color: gold;
+	background: rgb(0,0,0);
+}
+
+/* main content */
+article {
+	width: 720px;
+	float: right;
+	text-align: center;
+}
+
+article figure figcaption p {
+	font-size: 16px;
+	color: rgb(164,191,150);
+	padding: 10px 0;
+}
+
+article figure figcaption p a:link {
+	color: rgb(13,177,75);
+}
+
+/* remove blank space for descenders below image */
+article figure img {
+	display: block;
+}
+
+/* footer of the page */
+footer {
+	background: rgb(164,191,150);
+	width: 100%;
+	clear: both;
+	font-size: 18px;
+	padding: 10px;
+}
+
+footer p {
+	text-align: center;
+}
