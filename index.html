@@ -2,9 +2,9 @@
 </html>
 	<head>
 	<!--
-	CIS166AA Chapter 1 Case Project
+	CIS166AA: Case Project
 	Author: Kevin Ward
-	Date: 8/27/2016
+	Date: 9/5/2016
 	Filename: index.html
 	-->
 	<meta charset="utf-8" />
@@ -28,33 +28,64 @@
 				<ul>
 					<li id="currpage"><a href="index.html">Home</a></li>
 					<li><a href="page2.html">Star Wars</a></li>
-					<li><a href="page3.html">Video Games</a></li>
+					<li><a href="page3.html">Video Games and Movies</a></li>
 					<li><a href="page4.html">About Me</a></li>
 				</ul>
 			</nav>
 		
 		<aside>
+			<!-- <br /><h2>Your Power Level: <span id="powerlvl"></span></h2> -->
+			
 			<ul>
-				<li onclick="document.getElementById('toonImg').src = crest" id="crest">The Legend of Zelda Crest</li>
+				<li><p>Your Power Level: <span id="powerlvl"></span></p></li>
+				<!-- <li onclick="document.getElementById('toonImg').src = crest" id="gold">The Legend of Zelda Crest</li>
 				<li onclick="document.getElementById('toonImg').src = rinku" id="courage">Link, Hero of Courage</li>
 				<li onclick="document.getElementById('toonImg').src = zelda" id="wisdom">Zelda, Princess of Wisdom</li>
-				<li onclick="document.getElementById('toonImg').src = ganon" id="power">Ganon, King of Power</li>
-			</ul>	
+				<li onclick="document.getElementById('toonImg').src = ganon" id="power">Ganon, King of Power</li> -->
+			</ul>
 		</aside>
 		
 		<article>
+			<h2></h2>
+			<p></p>
+			<form>
+				<fieldset>
+				<legend><span>DBZ Power Levels</span></legend>
+					<input type="number" min="1" max="100" id="plage" value="18" />
+					<label for="plage">
+						<p>Type in your age (1&#8209;100)</p>
+					</label><br />
+					
+					<input type="number" min="1" id="plfriends" value="1" />
+					<label for="plfriends">
+					<p># of friends you have (minimum&nbsp;1)</p>
+					</label><br />
+
+					<input type="checkbox" id="over9k" />
+					<label for="over9k">
+						<p>Is your power level Extreme?</p>
+						<p>+9000</p>
+					</label><br />
+					
+					<input type="checkbox" id="gender" />
+					<label for="gender">
+						<p>If you are male check here.</p>
+					</label><br />
+				</fieldset>
+			</form>
+			
 			<figure>
-				<img src="images/hyrulecrest.png" width="720" height="480" alt"" title="" id="toonImg" />
+				<!-- <img src="images/hyrulecrest.png" width="720" height="480" alt"" title="" id="toonImg" />
 				<figcaption>
 					<script>
 						document.write("<p>All characters are copyright <a href='http://www.nintendo.com'>Nintendo</a>.</p>");
 					</script>
-				</figcaption>
+				</figcaption> -->
 			</figure>
 		</article>
 		
 		<footer>
-			<p>Kevin Ward 1981-2016</p>
+			<p>&copy Kevin Ward 1981-2016</p>
 		</footer>
 		
 		</div>

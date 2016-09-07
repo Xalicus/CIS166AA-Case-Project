@@ -162,7 +162,7 @@ aside ul li {
 	font-size: 24px;
 }
 
-#crest:hover {
+#gold:hover {
 	color: gold;
 	background: rgb(0,0,0);
 }
@@ -182,35 +182,11 @@ aside ul li {
 	background: rgb(0,0,0);
 }
 
-#luke:hover {
-	color: gold;
+#armor:hover {
+	color: orange;
 	background: rgb(0,0,0);
 }
 
-#leia:hover {
-	color: gold;
-	background: rgb(0,0,0);
-}
-
-#vader:hover {
-	color: gold;
-	background: rgb(0,0,0);
-}
-
-#xal1:hover {
-	color: gold;
-	background: rgb(0,0,0);
-}
-
-#xal2:hover {
-	color: gold;
-	background: rgb(0,0,0);
-}
-
-#xal3:hover {
-	color: gold;
-	background: rgb(0,0,0);
-}
 
 /* main content */
 article {
@@ -227,6 +203,64 @@ article figure figcaption p {
 
 article figure figcaption p a:link {
 	color: rgb(13,177,75);
+}
+
+/* form */
+form {
+   width: 720px;
+   margin: 0 auto;
+}
+
+form fieldset{
+   border: none; 
+   background: darkgreen;
+   position: relative;
+}
+
+form legend {
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: 10px;
+}
+
+form legend span {
+   position: relative;
+   top: 10px;
+}
+
+form label {
+   display: block;
+   font-size: 1.2em;
+   width: 530px;
+   text-align: right;
+}
+form label p {
+   float: left;
+   width: 100%;
+   text-align: right;
+}
+
+form label p:nth-child(2) {
+   font-size: 0.8em;
+}
+
+form input {
+   padding: 1%;
+   background: #333;
+   color: #BBB;
+   border: none;
+   font: normal 1em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+   float: right;
+   clear: both;
+   width: 100px;
+   margin-left: 10px;
+   margin-bottom: 20px;
+   position: relative;
+   top: -0.4em;
+}
+
+form input[type="checkbox"] {
+   position: static;
 }
 
 /* remove blank space for descenders below image */
