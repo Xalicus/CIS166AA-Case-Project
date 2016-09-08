@@ -1,7 +1,7 @@
 /*
-CIS166AA Chapter 1 Case Project
+CIS166AA: Case Project
 Author: Kevin Ward
-Date: 8/28/2016
+Date: 9/5/2016
 Filename: javascript.js
 */
 
@@ -40,13 +40,13 @@ function calcPwrLvl() {
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
 }
 
-//adds/subtracts over 9000 power lvls.
+// adds/subtracts over 9000 power lvls.
 function toggle9K() {
 	(document.getElementById("over9k").checked === false) ? totalPwrLvl -= 9000 : totalPwrLvl += 9000;
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
 }
 
-//adds/subtracts if they are a boy or girl.
+// adds/subtracts if they are a boy or girl.
 function toggleGender() {
 	(document.getElementById("gender").checked === false) ? totalPwrLvl -= 250 : totalPwrLvl += 250;
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
@@ -76,59 +76,3 @@ window.addEventListener("load", resetLvl, false);
 
 
 
-
-
-
-
-/*
-// variables for this project
-var photographerCost = 0;
-var totalCost = 0;
-var memoryBook = false;
-var repoductionRights = false;
-
-// calculates all costs based on staff and adds to total cost
-function calcStaff() {
-	var num = document.getElementById("photognum");
-	var hrs = document.getElementById("photoghrs");
-	var distance = document.getElementById("distance");
-	totalCost -= photographerCost;
-	photographerCost = num.value * 100 * hrs.value + distance.value * num.value;
-	totalCost += photographerCost;
-	document.getElementById("estimate").innerHTML = "$" + totalCost;
-}
-
-// adds/subtracts cost of memory book from total cost
-function toggleMembook() {
-	(document.getElementById("membook").checked === false) ? totalCost -= 250 : totalCost += 250;
-	document.getElementById("estimate").innerHTML = "$" + totalCost;
-}
-// adds/subtracts cost of reproduction rights from total cost
-function toggleRights() {
-	(document.getElementById("reprodrights").checked === false) ? totalCost -= 1250 : totalCost += 1250;
-	document.getElementById("estimate").innerHTML = "$" + totalCost;
-}
-
-// sets all form field values to defaults
-function resetForm() {
-	document.getElementById("photognum").value = 1;
-	document.getElementById("photoghrs").value = 2;
-	document.getElementById("membook").checked = memoryBook;
-	document.getElementById("reprodrights").checked = repoductionRights;
-	document.getElementById("distance").value = 0;
-	calcStaff();
-	createEventListeners();
-}
-
-// creates event listeners
-function createEventListeners() {
-	document.getElementById("photognum").addEventListener("change", calcStaff, false);
-	document.getElementById("photoghrs").addEventListener("change", calcStaff, false);
-	document.getElementById("membook").addEventListener("change", toggleMembook, false);
-	document.getElementById("reprodrights").addEventListener("change", toggleRights, false);
-	document.getElementById("distance").addEventListener("change", calcStaff, false);
-}
-
-// resets form when page is reloaded
-window.addEventListener("load", resetForm, false);
-*/
