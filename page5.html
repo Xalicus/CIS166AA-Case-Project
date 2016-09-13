@@ -5,7 +5,7 @@
 	CIS166AA: Case Project
 	Author: Kevin Ward
 	Date: 9/12/2016
-	Filename: page4.html
+	Filename: page5.html
 	-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -20,7 +20,7 @@
 				<h1>
 					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1" /></a>
 					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2" />
-					About Me
+					Farenheight to Celieus converter
 				</h1>
 			</header>
 			
@@ -29,9 +29,9 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="page2.html">DBZ PwrLvl</a></li>
 					<li><a href="page3.html">Games and Movies</a></li>
-					<li id="currpage"><a href="page4.html">About Me</a></li>
-					<li><a href="page5.html">F2C converter</a></li>
-<!--				This is for future pages.
+					<li><a href="page4.html">About Me</a></li>
+					<li id="currpage"><a href="page5.html">F2C converter</a></li>
+			<!--	This is for future pages.
 					<li><a href="page6.html">Page 6</a></li>
 					<li><a href="page7.html">Page 7</a></li>
 					<li><a href="page8.html">Page 8</a></li>
@@ -48,21 +48,25 @@
 		
 		<aside>
 			<ul>
-				<li>About Me</li>
+				<li>Fahrenheit to Celsius Converter</li>
 			</ul>	
 		</aside>
 		
 		<article>
-			<figure>
-				
-				<figcaption>
-					<p>Hello and Welcome to my website for CIS166AA.</p>
-					
-					<!-- <script>
-						document.write("<p>Hello, and Welcome to my website for CIS166AA.</p>");
-					</script> -->
-				</figcaption>
-			</figure>
+			<h2>Fahrenheit (&#176; F) to Celsius (&#176; C) converter</h2>
+			<form>
+				<fieldset>
+					<label for="fValue">Enter temp in &#176; F</label>
+				<input type="number" id="fValue" />
+				</fieldset>
+				<fieldset>
+					<button type="button" id="button">Convert to &#176; C</button>
+				</fieldset><br />
+				<fieldset>
+					<p>Temp in &#176; C</p>
+					<p id="cValue">&nbsp;</p>
+				</fieldset>
+			</form>
 		</article>
 		
 		<footer>
