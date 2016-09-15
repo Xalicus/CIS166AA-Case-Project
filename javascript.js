@@ -38,7 +38,7 @@ var docWho = ["William Hartnell", "Patrick Troughton", "Jon Pertwee", "Tom Baker
 var whoYrs = ["1963-66", "1966-69", "1970-74", "1974-81", "1982-84", "1984-86", 
 				"1987-89", "1996", "2013", "2005", "2005-10", "2010-13", "2014-present"];
 var docType = ["classic", "classic", "classic", "classic", "classic", "classic", 
-				"classic", "classic", "reboot", "reboot", "reboot", "reboot", "reboot", ];
+				"classic", "classic", "reboot", "reboot", "reboot", "reboot", "reboot"];
 
 
 
@@ -72,6 +72,7 @@ function createEventListeners() {
 	document.getElementById("alien").addEventListener("change", toggleAlien, false);
 }
 
+
 //	This will set all the Power Level form field values to defaults.
 function resetLvl() {
 	document.getElementById("plage").value = 18;
@@ -82,76 +83,79 @@ function resetLvl() {
 	createEventListeners();
 }
 
+
 //	Function to place whoType values in header row cells. Works!
 function addWhoTitle() {
 	var i = 0;
-	while (i < 4) {
+	while (i < whoType.length) {
 		document.getElementsByTagName("th")[i].innerHTML = whoType[i];
 		i++;
 	}
 }
 
-/*
-//	This function should add the classic Doctor Who names and dates
-function addClasDoc() {
-	var docName = "";
-	for (var i = 0; i < 8; i++) {
-		var tableCells = document.getElementById("classic");
-		docName = tableCells.getElementsByTagName("p");
-		if (docType[i] === "classic") {
-			docName[1].innerHTML = classicWho[1]
-			i++;
-		}
-		else {
-			if (docType[i] === "classic") {
-			docType[1].innerHTML = classicYrs[1]
-			i++;
-			}
-		}
-		docName[1].innerHTML += classicWho[1];
-	}
-}
 
-//	This function should add the reboot Doctor Who names and dates.
-function addRebootDoc() {
-	var docName = "";
-	for (var i = 0; i < 5; i++) {
-		var tableCells = document.getElementById("reboot");
-		docName = tableCells.getElementsByTagName("p");
-		if (docType[i] === "reboot") {
-			docName[1].innerHTML = rebootWho[1];
-			i++;
-		}
-		else {
-			if (docType[i] === "reboot") {
-			docType[1].innerHTML = rebootYrs[1]
-			i++;
-			}
-		}
-		docName[1].innerHTML += rebootWho[1];
-	}
-}
-*/
-
-
-//	This switch statement should add the dates based off of either 19 or 20.
+//	This switch statement should add the Doctor Who names and dates.
 function addYrs() {
 	var	docYrs = "";
 	for (var i = 0; i < 13; i++) {
 		var tableCell = document.getElementsByTagName("td");
-		docYrs = tableCell.getElementsByTagName("p");
 		switch (docType[i]) {
 			case "classic":
-				docYrs[1].innerHTML = docWho[1];
+				tableCell[0].innerHTML = "<p>" + docWho[0] + "<br />" + whoYrs[0] + "</p>";
+				tableCell[3].innerHTML = "<p>" + docWho[1] + "<br />" + whoYrs[1] + "</p>";
+				tableCell[6].innerHTML = "<p>" + docWho[2] + "<br />" + whoYrs[2] + "</p>";
+				tableCell[9].innerHTML = "<p>" + docWho[3] + "<br />" + whoYrs[3] + "</p>";
+				tableCell[12].innerHTML = "<p>" + docWho[4] + "<br />" + whoYrs[4] + "</p>";
+				tableCell[15].innerHTML = "<p>" + docWho[5] + "<br />" + whoYrs[5] + "</p>";
+				tableCell[18].innerHTML = "<p>" + docWho[6] + "<br />" + whoYrs[6] + "</p>";
+				tableCell[21].innerHTML = "<p>" + docWho[7] + "<br />" + whoYrs[7] + "</p>";
 				break;
 			case "reboot":
-				docYrs[1].innerHTML	= docWho[1];
+				tableCell[2].innerHTML	= "<p>" + docWho[9] + "<br />" + whoYrs[9] + "</p>";
+				tableCell[5].innerHTML	= "<p>" + docWho[10] + "<br />" + whoYrs[10] + "</p>";
+				tableCell[8].innerHTML	= "<p>" + docWho[11] + "<br />" + whoYrs[11] + "</p>";
+				tableCell[11].innerHTML	= "<p>" + docWho[8] + "<br />" + whoYrs[8] + "</p>";
+				tableCell[14].innerHTML	= "<p>" + docWho[12] + "<br />" + whoYrs[12] + "</p>";
+				tableCell[17].innerHTML	= "<p>" + docWho[13] + "<br />" + whoYrs[13] + "</p>";
+				tableCell[20].innerHTML	= "<p>" + docWho[14] + "<br />" + whoYrs[14] + "</p>";
+				tableCell[23].innerHTML	= "<p>" + docWho[15] + "<br />" + whoYrs[15] + "</p>";
 				break;
 		} // end switch
-		docYrs[1].innerHTML += whoYrs[i];
+//		tableCell[i].innerHTML += whoYrs[i]; //Not needed anymore.
 	} // end for
 } // end function
 
+/*
+//	This function should add the classic Doctor Who names and dates
+function addDoc() {
+	var docName = "";
+	var tableCells = document.getElementsByTagName("td");
+	docName = tableCells.getElementsByTagName("p");
+	if (docType[i] === "classic") {
+		docName[1].innerHTML = docWho[i]
+		i++;
+	}
+	else if (docType[i] === "reboot") {
+		docType[1].innerHTML = docWho[i]
+		i++;
+	}
+	docName[1].innerHTML += docWho[i];
+	
+	for (var i = 0; i < 13; i++) {
+		var tableCells = document.getElementsByTagName("td");
+		docName = tableCells.getElementsByTagName("p");
+		if (docType[i] === "classic") {
+			docName[1].innerHTML = docWho[1]
+			i++;
+		}
+		else if (docType[i] === "reboot") {
+			docType[1].innerHTML = docWho[8]
+			i++;
+		}
+		docName[1].innerHTML += docWho[i];
+	}
+}
+*/
 
 /*
 //	This function should add the classic Doctor Who dates.
@@ -186,10 +190,7 @@ function addRebootYrs() {
 
 function setUpPage() {
 	addWhoTitle();
-//	addClasDoc();
-//	addRebootDoc();
-//	addClasYrs();
-//	addRebootYrs();
+//	addDoc();
 	addYrs();
 //	convertF2C();
 	document.getElementById("button").addEventListener("click", convertF2C, false);
