@@ -5,10 +5,10 @@
 	CIS166AA: Case Project
 	Author: Kevin Ward
 	Date: 9/18/2016
-	Filename: index.html
+	Filename: docwho.html
 	-->
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Kevin Ward's Case Project</title>
 		<link rel="stylesheet" href="styles.css" />
 		<!-- Adding modernizr JavaScript link. -->
@@ -20,61 +20,30 @@
 				<h1>
 					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1" /></a>
 					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2" />
-					Kevin's Home Page
+					Doctor Who
 				</h1>
 			</header>
 			
 			<nav>
 				<ul>
-					<li id="currpage"><a href="index.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
 					<li><a href="vgm.html">Games & Movies</a></li>
-					<li><a href="docwho.html">Doctor Who</a></li>
+					<li id="currpage"><a href="docwho.html">Doctor Who</a></li>
 					<li><a href="about.html">About Me</a></li>
 				</ul>
 			</nav>
 		
 		<aside>
 			<ul>
-				<li><p>Your Power Level: <span id="powerlvl"></span></p></li>
-				<li><p>Doctor Who Actors:</p></li>
-			</ul>
+				<li>Doctor Who Actors:</li>
+			</ul>	
 		</aside>
 		
 		<article>
-			<!--<h2>Dragon Ball Z Power Levels</h2>-->
-			<form>
-				<fieldset>
-				<legend><span>Dragon Ball Z Power Levels</span></legend><br />
-					<input type="number" min="1" max="100" id="plage" value="18" />
-					<label for="plage">
-						<p>Type in your age (1 - 100)</p>
-					</label><br />
-					
-					<input type="number" min="1" id="plfriends" value="1" />
-					<label for="plfriends">
-					<p># of friends you have (minimum 1)</p>
-					</label><br />
-
-					<input type="checkbox" id="over9k" />
-					<label for="over9k">
-						<p>Is your power level Extreme?</p>
-						<p>+9000</p>
-					</label><br />
-					
-					<input type="checkbox" id="alien" />
-					<label for="alien">
-						<p>If you are an alien check here.</p>
-						<p>+250</p>
-					</label><br />
-				</fieldset>
-			</form>
-			<p>&copy; DragonBall Z copyright holders.</p>
-			<br />
-			
-			<h2>List of Doctors from Doctor Who</h2>
+			<h2>The Doctors from Doctor Who list:</h2>
 			<table>
-			<caption>Doctor Who</caption>
+				<caption>Classic/Reboot table</caption>
 			<thead>
 				<tr>
 					<th id="clsctitle"></th>
@@ -149,6 +118,20 @@
 				</tr>
 			</tbody>
 			</table>
+			<!--<h2>Fahrenheit (&#176; F) to Celsius (&#176; C) converter</h2>
+			<form>
+				<fieldset>
+					<label for="fValue">Enter temp in &#176; F</label>
+				<input type="number" id="fValue" />
+				</fieldset>
+				<fieldset>
+					<button type="button" id="button">Convert to &#176; C</button>
+				</fieldset><br />
+				<fieldset>
+					<p>Temp in &#176; C</p>
+					<p id="cValue">&nbsp;</p>
+				</fieldset>
+			</form>-->
 		</article>
 		
 		<footer>

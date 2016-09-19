@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!--
+	CIS166AA: Case Project
+	Author: Kevin Ward
+	Date: 9/18/2016
+	Filename: all.html
+	-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>Kevin Ward's Case Project</title>
+		<link rel="stylesheet" href="styles.css" />
+		<!-- Adding modernizr JavaScript link. -->
+		<script src="modernizr.custom.05819.js"></script>
+	</head>
+	<body>
+		<div id="mainbody">
+			<header>
+				<h1>
+					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1" /></a>
+					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2" />
+					All Page
+				</h1>
+			</header>
+			
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
+					<li><a href="vgm.html">Games & Movies</a></li>
+					<li><a href="docwho.html">Doctor Who</a></li>
+					<li><a href="about.html">About Me</a></li>
+					<li id="currpage"><a href="all.html">All</a></li>
+<!--				This is for future pages.
+					<li><a href="page6.html">Page 6</a></li> -->
+				</ul>
+			</nav>
+		
+		<aside>
+			<ul>
+				<li id="gold"><p>Doctor Who Actors:</p></li>
+				<li id="gold"><p>Your Power Level: <span id="powerlvl"></span></p></li>
+				<li onclick="document.getElementById('toonImg').src = crest" id="gold">The Legend of Zelda Crest</li>
+				<li onclick="document.getElementById('toonImg').src = rinku" id="courage">Link, Hero of Courage</li>
+				<li onclick="document.getElementById('toonImg').src = zelda" id="wisdom">Zelda, Princess of Wisdom</li>
+				<li onclick="document.getElementById('toonImg').src = ganon" id="power">Ganon, King of Power</li>
+				<li onclick="document.getElementById('toonImg').src = armor" id="armor">Link from Breath of the Wild</li>
+				<li onclick="document.getElementById('toonImg').src = xal1" id="gold">Xalicus Xander, FFXIV</li>
+				<li onclick="document.getElementById('toonImg').src = xal2" id="gold">Zander Flametouched, GW2</li>
+				<li onclick="document.getElementById('toonImg').src = xal3" id="gold">Xalicus Xander, DDO</li>
+				<li onclick="document.getElementById('toonImg').src = sw" id="gold">Star Wars Logo</li>
+				<li onclick="document.getElementById('toonImg').src = luke" id="gold">Luke Skywalker, Jedi</li>
+				<li onclick="document.getElementById('toonImg').src = leia" id="gold">Leia Organa, Senator</li>
+				<li onclick="document.getElementById('toonImg').src = vader" id="gold">Darth Vader, Sith</li>
+			</ul>
+		</aside>
+		
+		<article>
+			<h2>List of Doctors from Doctor Who</h2>
+			<table>
+			<caption></caption>
+			<thead>
+				<tr>
+					<th id="clsctitle"></th>
+					<th></th>
+					<th id="rebotitle"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="classic1">
+					</td>
+					<td>1
+					</td>
+					<td id="reboot1">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic2">
+					</td>
+					<td>2
+					</td>
+					<td id="reboot2">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic3">
+					</td>
+					<td>3
+					</td>
+					<td id="reboot3">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic4">
+					</td>
+					<td>4
+					</td>
+					<td id="reboot4">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic5">
+					</td>
+					<td>5
+					</td>
+					<td id="reboot5">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic6">
+					</td>
+					<td>6
+					</td>
+					<td id="reboot6">
+					</td>
+				</tr>
+				<tr>
+					<td id="classic7">
+					</td>
+					<td>7
+					</td id="reboot7">
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td id="classic8">
+					</td>
+					<td>8
+					</td>
+					<td id="reboot8">
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			<p>&copy; Doctor Who copyright holders.</p>
+			<br />
+			
+			<!--<h2>Dragon Ball Z Power Levels</h2>-->
+			<form>
+				<fieldset>
+				<legend><span>Dragon Ball Z Power Levels</span></legend><br />
+					<input type="number" min="1" max="100" id="plage" value="18" />
+					<label for="plage">
+						<p>Type in your age (1 - 100)</p>
+					</label><br />
+					
+					<input type="number" min="1" id="plfriends" value="1" />
+					<label for="plfriends">
+					<p># of friends you have (minimum 1)</p>
+					</label><br />
+
+					<input type="checkbox" id="over9k" />
+					<label for="over9k">
+						<p>Is your power level Extreme?</p>
+						<p>+9000</p>
+					</label><br />
+					
+					<input type="checkbox" id="alien" />
+					<label for="alien">
+						<p>If you are an alien check here.</p>
+						<p>+250</p>
+					</label><br />
+				</fieldset>
+			</form>
+			<p>&copy; DragonBall Z copyright holders.</p>
+			<br />
+			
+			
+			<figure>
+				<img src="images/title.jpg" width="720" height="480" alt"" title="" id="toonImg" />
+				<figcaption>
+					<script>
+						document.write("<p>All characters are copyright of their respective game developers or copyright holders.</p>");
+					</script>
+				</figcaption>
+			</figure>
+			<br />
+		</article>
+		
+		<footer>
+			<p>&copy; Kevin Ward 1981-2016</p>
+		</footer>
+		
+		</div>
+		<script src="javascript.js"></script>
+	</body>
+</html>

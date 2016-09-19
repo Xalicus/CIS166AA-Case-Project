@@ -27,7 +27,7 @@ var xal3 = "images/xal3.jpg";
 //	Variables for my DragonBall Z Power Level function.
 var totalPwrLvl = 0;
 var pwrLvlCost = 0;
-var plage = 0;
+var plage = 18;
 var plfriends = 1;
 var over9k = false;
 var alien = false;
@@ -37,20 +37,27 @@ var alien = false;
 var whoType = ["Classic Doctor Who", "-", "Rebooted Doctor Who"];
 var docWho = ["William Hartnell", "Patrick Troughton", "Jon Pertwee", "Tom Baker", 
 				"Peter Davison", "Colin Baker", "Sylvester McCoy", "Paul McGann", 
-				"John Hurt", "Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi"];
+				"John Hurt", "Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi", 
+				"Rupert Grint", "Doctor 14", "Doctor 15"];
 var whoYrs = ["1963-66", "1966-69", "1970-74", "1974-81", "1982-84", "1984-86", 
-				"1987-89", "1996", "2013", "2005", "2005-10", "2010-13", "2014-present"];
+				"1987-89", "1996", "2013", "2005", "2005-10", "2010-13", "2014-present", 
+				"Possible Future", "Timey Whimey", "Wibbly Wobbly"];
 var docType = ["classic", "classic", "classic", "classic", "classic", "classic", 
-				"classic", "classic", "reboot", "reboot", "reboot", "reboot", "reboot"];
+				"classic", "classic", "reboot", "reboot", "reboot", "reboot", "reboot",
+				"future", "future", "future"];
 
 
 //	Calculates your DragonBall Z Power Level.
 function calcPwrLvl() {
 	var age = document.getElementById("plage");
+console.log("After age is declared: " + age.value);
 	var friends = document.getElementById("plfriends");
+console.log("After friends are declared: " + friends.value);
 	totalPwrLvl -= pwrLvlCost;
+console.log("Before pwrLvlCost: " + totalPwrLvl.value);
 	pwrLvlCost = age.value * 20 * friends.value;
 	totalPwrLvl += pwrLvlCost;
+console.log("After pwrLvlCost: " + totalPwrLvl.value);
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
 }
 
@@ -59,6 +66,7 @@ function calcPwrLvl() {
 function toggle9K() {
 	(document.getElementById("over9k").checked === false) ? totalPwrLvl -= 9000 : totalPwrLvl += 9000;
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
+console.log("After toggle9K: " + totalPwrLvl.value);
 }
 
 
@@ -66,6 +74,7 @@ function toggle9K() {
 function toggleAlien() {
 	(document.getElementById("alien").checked === false) ? totalPwrLvl -= 250 : totalPwrLvl += 250;
 	document.getElementById("powerlvl").innerHTML = "#" + totalPwrLvl;
+console.log("After toggleAlien: " + totalPwrLvl.value);
 }
 
 
@@ -130,23 +139,11 @@ function addYrs() {
 } // end function
 
 
-//	This is a F to C converter.
-function convertF2C() {
-	var degF = document.getElementById("fValue").value;
-	var degC = (degF - 32) * (5 / 9);
-	document.getElementById("cValue").innerHTML = degC;
-}
-//document.getElementById("button").addEventListener("click", convertF2C, false);
-
-
 //	This function will populate the Doctor Who page and reset the Power Level form.
 
 function setUpPage() {
 	addWhoTitle();
-//	addDoc();
 	addYrs();
-//	convertF2C();
-	document.getElementById("button").addEventListener("click", convertF2C, false);
 	resetLvl();
 }
 
