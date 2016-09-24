@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/18/2016
+Date: 9/21/2016
 Filename: javascript.js
 */
 
@@ -45,18 +45,40 @@ var ageBox = document.getElementById("age");
 
 
 //	Arrays for the if/else/switch/while statement.
-var whoType = ["Classic Doctor Who", "-", "Rebooted Doctor Who"];
-var docWho = ["William Hartnell", "Patrick Troughton", "Jon Pertwee", "Tom Baker", 
-				"Peter Davison", "Colin Baker", "Sylvester McCoy", "Paul McGann", 
-				"John Hurt", "Christopher Eccleston", "David Tennant", "Matt Smith", "Peter Capaldi", 
+var whoType = ["The Classic Doctor", "-", "The Rebooted Doctor"];
+var docWhoC = ["William Hartnell", "Patrick Troughton", "Jon Pertwee", "Tom Baker", 
+				"Peter Davison", "Colin Baker", "Sylvester McCoy", "Paul McGann"];
+var docWhoR = ["Christopher Eccleston", "David Tennant", "Matt Smith", "John Hurt", "Peter Capaldi", 
 				"Doctor 13", "Doctor 14", "Doctor 15"];
-var whoYrs = ["1963-66", "1966-69", "1970-74", "1974-81", "1982-84", "1984-86", 
-				"1987-89", "1996", "2013", "2005", "2005-10", "2010-13", "2014-present", 
-				"Future Time", "Timey Whimey", "Wibbly Wobbly"];
+var whoYrsC = ["1963-66", "1966-69", "1970-74", "1974-81", "1982-84", "1984-86", 
+				"1987-89", "1996"]
+var whoYrsR = ["2005", "2005-10", "2010-13", "2013", "2014-present", 
+				"Wibbly Wobbly", "Timey Wimey", "Stuff, it's complicated."];
 var docType = ["classic", "classic", "classic", "classic", "classic", "classic", 
 				"classic", "classic", "reboot", "reboot", "reboot", "reboot", "reboot",
 				"future", "future", "future"];
-var thHead = document.getElementsByTagName("th");
+/*var thHead = document.getElementsByTagName("th");
+var tdCell = document.getElementsByTagName("td");*/
+var thHead1 = document.getElementsByName("type");
+var tdCell1 = document.getElementsByName("classic");
+var tdCell2 = document.getElementsByName("reboot");
+var thHead2 = document.getElementsByName("websec");
+var tdCell3 = document.getElementsByName("navi");
+
+
+//	Array for Web Security table.
+var webSecType = ["The name of the exposed DOM object:", "What the DOM object exposes to us:"];
+var webSec = ["Web Browser name:", navigator.appName, 
+			"Web browser version:", navigator.appVersion, 
+			"User Agent used:", navigator.userAgent, 
+			"Platform you're running:", navigator.platform, 
+			"Your Online status:", navigator.onLine, 
+			"Your Screen Resolution:", screen.width + " X " + screen.height, 
+			"The Color Depth of your screen:", screen.colorDepth, 
+			"-", "-", "-", "-", "-", "-"];
+			/*, "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"];*/
+
+
 
 
 //	Calculates your DragonBall Z Power Level.
@@ -116,16 +138,30 @@ function resetLvl() {
 function addWhoTitle() {
 	var i = 0;
 	while (i < whoType.length) {
-		thHead[i].innerHTML = whoType[i];
+		thHead1[i].innerHTML = whoType[i];
 		i++;
 	}
 }
 
 
 //	This switch statement should add the Doctor Who names and dates.
-function addDocYrs() {
-	var	docYrs = "";
-	for (var i = 0; i < docWho.length; i++) {
+function addDocYrsC() {
+	var i = 0;
+	while (i < docWhoC.length) {
+		tdCell1[i].innerHTML = "<p>" + docWhoC[i] + "<br />" + whoYrsC[i] + "</p>";
+		i++;
+	}
+}// end function
+
+
+function addDocYrsR() {
+	var i = 0;
+	while (i < docWhoR.length) {
+		tdCell2[i].innerHTML = "<p>" + docWhoR[i] + "<br />" + whoYrsR[i] + "</p>";
+		i++;
+	}	
+
+/*	for (var i = 0; i < docWho.length; i++) {
 		var tableCell = document.getElementsByTagName("td");
 		switch (docType[i]) {
 			case "classic":
@@ -149,7 +185,7 @@ function addDocYrs() {
 				tableCell[23].innerHTML	= "<p>" + docWho[15] + "<br />" + whoYrs[15] + "</p>";
 				break;
 		} // end switch
-	} // end for
+	} // end for*/
 } // end function
 
 
@@ -176,6 +212,54 @@ function valAgeForm() {
 	
 	return true;
 }// end function
+
+
+function webSecTitle() {
+	var i = 0;
+	while (i < webSecType.length) {
+		thHead2[i].innerHTML = webSecType[i];
+		i++;
+	}
+}
+
+
+function browserInfo() {
+/*	console.log("Web Browser name: " + navigator.appName);
+	console.log("Web browser version: " + navigator.appVersion);
+	console.log("User agent: " + navigator.userAgent);
+	console.log("Geolocation: " + navigator.geolocation);
+	console.log("Online: " + navigator.onLine);
+	console.log("Platform: " + navigator.platform);
+	
+	console.log("Screen Width: " + screen.width);
+	console.log("Screen Height: " + screen.height);
+	console.log("Color Depth: " + screen.colorDepth);
+	console.log("Available Width: " + screen.availWidth);
+	console.log("Available Height: " + screen.availHeight);
+	console.log("Pixel Depth: " + screen.pixelDepth);
+	console.log(webSecType);
+	console.log(webSec);*/
+	var i = 0;
+	while (i < webSec.length) {
+		tdCell3[i].innerHTML = webSec[i];
+/*		tdCell[0].innerHTML = webSec[0];
+		tdCell[1].innerHTML = webSec[1];
+		tdCell[2].innerHTML = webSec[2];
+		tdCell[3].innerHTML = webSec[3];
+		tdCell[4].innerHTML = webSec[4];
+		tdCell[5].innerHTML = webSec[5];
+		tdCell[6].innerHTML = webSec[6];
+		tdCell[7].innerHTML = webSec[7];
+		tdCell[8].innerHTML = webSec[8];
+		tdCell[9].innerHTML = webSec[9];
+		tdCell[10].innerHTML = webSec[10];
+		tdCell[11].innerHTML = webSec[11];
+		tdCell[12].innerHTML = webSec[12];
+		tdCell[13].innerHTML = webSec[13];
+		tdCell[14].innerHTML = webSec[14];*/
+		i++;
+	}
+}
 
 /*
 function valFrdForm() {
@@ -205,11 +289,13 @@ function valFrdForm() {
 //	This function will populate the Doctor Who page and reset the Power Level form.
 function setUpPage() {
 	addWhoTitle();
-	addDocYrs();
-	createEventListeners();
-	valAgeForm();
-//	valFrdForm();
-	resetLvl();
+	addDocYrsC();
+	addDocYrsR();
+//	createEventListeners();
+//	valAgeForm();
+//	resetLvl();
+	webSecTitle();
+	browserInfo();
 }
 
 
