@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/21/2016
+Date: 9/25/2016
 Filename: javascript.js
 */
 
@@ -74,9 +74,7 @@ var webSec = ["Web Browser name:", navigator.appName,
 			"Platform you're running:", navigator.platform, 
 			"Your Online status:", navigator.onLine, 
 			"Your Screen Resolution:", screen.width + " X " + screen.height, 
-			"The Color Depth of your screen:", screen.colorDepth, 
-			"-", "-", "-", "-", "-", "-"];
-			/*, "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"];*/
+			"The Color Depth of your screen:", screen.colorDepth];
 
 
 
@@ -123,7 +121,6 @@ function createEventListeners() {
 //	This will set all the Power Level form field values to defaults.
 function resetLvl() {
 //	document.getElementById("age").value = 18;
-//	document.getElementById("friends").value = 1;
 //	document.getElementById("over9k").checked = over9k;
 //	document.getElementById("alien").checked = alien;
 	ageFieldset.value = age;
@@ -159,7 +156,7 @@ function addDocYrsR() {
 	while (i < docWhoR.length) {
 		tdCell2[i].innerHTML = "<p>" + docWhoR[i] + "<br />" + whoYrsR[i] + "</p>";
 		i++;
-	}	
+	}
 
 /*	for (var i = 0; i < docWho.length; i++) {
 		var tableCell = document.getElementsByTagName("td");
@@ -186,6 +183,7 @@ function addDocYrsR() {
 				break;
 		} // end switch
 	} // end for*/
+	
 } // end function
 
 
@@ -224,67 +222,13 @@ function webSecTitle() {
 
 
 function browserInfo() {
-/*	console.log("Web Browser name: " + navigator.appName);
-	console.log("Web browser version: " + navigator.appVersion);
-	console.log("User agent: " + navigator.userAgent);
-	console.log("Geolocation: " + navigator.geolocation);
-	console.log("Online: " + navigator.onLine);
-	console.log("Platform: " + navigator.platform);
-	
-	console.log("Screen Width: " + screen.width);
-	console.log("Screen Height: " + screen.height);
-	console.log("Color Depth: " + screen.colorDepth);
-	console.log("Available Width: " + screen.availWidth);
-	console.log("Available Height: " + screen.availHeight);
-	console.log("Pixel Depth: " + screen.pixelDepth);
-	console.log(webSecType);
-	console.log(webSec);*/
 	var i = 0;
 	while (i < webSec.length) {
 		tdCell3[i].innerHTML = webSec[i];
-/*		tdCell[0].innerHTML = webSec[0];
-		tdCell[1].innerHTML = webSec[1];
-		tdCell[2].innerHTML = webSec[2];
-		tdCell[3].innerHTML = webSec[3];
-		tdCell[4].innerHTML = webSec[4];
-		tdCell[5].innerHTML = webSec[5];
-		tdCell[6].innerHTML = webSec[6];
-		tdCell[7].innerHTML = webSec[7];
-		tdCell[8].innerHTML = webSec[8];
-		tdCell[9].innerHTML = webSec[9];
-		tdCell[10].innerHTML = webSec[10];
-		tdCell[11].innerHTML = webSec[11];
-		tdCell[12].innerHTML = webSec[12];
-		tdCell[13].innerHTML = webSec[13];
-		tdCell[14].innerHTML = webSec[14];*/
 		i++;
 	}
 }
 
-/*
-function valFrdForm() {
-	var valFrd = friendBox;
-	var validity = true;
-	var messageText = "";
-	
-	try {
-		if (!(valFrd.value >= 1)) {
-			throw "Please get more friends.";
-		}// end if
-	}// end try
-	
-	catch(frdError) {
-		window.alert(frdError);
-		return false;
-	}// end catch
-	
-	finally {
-		frdValid = true;
-	}// end finally
-	
-	return true;
-}// end function
-*/
 
 //	This function will populate the Doctor Who page and reset the Power Level form.
 function setUpPage() {
@@ -294,8 +238,8 @@ function setUpPage() {
 //	createEventListeners();
 //	valAgeForm();
 //	resetLvl();
-	webSecTitle();
-	browserInfo();
+//	webSecTitle();
+//	browserInfo();
 }
 
 

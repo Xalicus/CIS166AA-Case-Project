@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/18/2016
+Date: 9/25/2016
 Filename: styles.css
 */
 
@@ -245,11 +245,30 @@ article td p:first-of-type {
    text-align: right;
 }
 
+article div h3 {
+	color: darkblue;
+}
+
+article div p {
+	color: blue;
+}
+
+article div a:link {
+	color: red;
+	font-weight: bold;
+}
 
 h2 {
 	font-size: 1.9em;
 	font-weight: bold;
 	margin: 5px;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 4px;
+	text-align: left;
 }
 
 
