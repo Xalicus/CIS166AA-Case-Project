@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/25/2016
+Date: 10/2/2016
 Filename: javascript.js
 */
 
@@ -145,7 +145,7 @@ function addWhoTitle() {
 function addDocYrsC() {
 	var i = 0;
 	while (i < docWhoC.length) {
-		tdCell1[i].innerHTML = "<p>" + docWhoC[i] + "<br />" + whoYrsC[i] + "</p>";
+		tdCell1[i].innerHTML = "<p>" + docWhoC[i] + "<br>" + whoYrsC[i] + "</p>";
 		i++;
 	}
 }// end function
@@ -154,7 +154,7 @@ function addDocYrsC() {
 function addDocYrsR() {
 	var i = 0;
 	while (i < docWhoR.length) {
-		tdCell2[i].innerHTML = "<p>" + docWhoR[i] + "<br />" + whoYrsR[i] + "</p>";
+		tdCell2[i].innerHTML = "<p>" + docWhoR[i] + "<br>" + whoYrsR[i] + "</p>";
 		i++;
 	}
 
@@ -162,24 +162,24 @@ function addDocYrsR() {
 		var tableCell = document.getElementsByTagName("td");
 		switch (docType[i]) {
 			case "classic":
-				tableCell[0].innerHTML = "<p>" + docWho[0] + "<br />" + whoYrs[0] + "</p>";
-				tableCell[3].innerHTML = "<p>" + docWho[1] + "<br />" + whoYrs[1] + "</p>";
-				tableCell[6].innerHTML = "<p>" + docWho[2] + "<br />" + whoYrs[2] + "</p>";
-				tableCell[9].innerHTML = "<p>" + docWho[3] + "<br />" + whoYrs[3] + "</p>";
-				tableCell[12].innerHTML = "<p>" + docWho[4] + "<br />" + whoYrs[4] + "</p>";
-				tableCell[15].innerHTML = "<p>" + docWho[5] + "<br />" + whoYrs[5] + "</p>";
-				tableCell[18].innerHTML = "<p>" + docWho[6] + "<br />" + whoYrs[6] + "</p>";
-				tableCell[21].innerHTML = "<p>" + docWho[7] + "<br />" + whoYrs[7] + "</p>";
+				tableCell[0].innerHTML = "<p>" + docWho[0] + "<br>" + whoYrs[0] + "</p>";
+				tableCell[3].innerHTML = "<p>" + docWho[1] + "<br>" + whoYrs[1] + "</p>";
+				tableCell[6].innerHTML = "<p>" + docWho[2] + "<br>" + whoYrs[2] + "</p>";
+				tableCell[9].innerHTML = "<p>" + docWho[3] + "<br>" + whoYrs[3] + "</p>";
+				tableCell[12].innerHTML = "<p>" + docWho[4] + "<br>" + whoYrs[4] + "</p>";
+				tableCell[15].innerHTML = "<p>" + docWho[5] + "<br>" + whoYrs[5] + "</p>";
+				tableCell[18].innerHTML = "<p>" + docWho[6] + "<br>" + whoYrs[6] + "</p>";
+				tableCell[21].innerHTML = "<p>" + docWho[7] + "<br>" + whoYrs[7] + "</p>";
 				break;
 			case "reboot":
-				tableCell[2].innerHTML	= "<p>" + docWho[9] + "<br />" + whoYrs[9] + "</p>";
-				tableCell[5].innerHTML	= "<p>" + docWho[10] + "<br />" + whoYrs[10] + "</p>";
-				tableCell[8].innerHTML	= "<p>" + docWho[11] + "<br />" + whoYrs[11] + "</p>";
-				tableCell[11].innerHTML	= "<p>" + docWho[8] + "<br />" + whoYrs[8] + "</p>";
-				tableCell[14].innerHTML	= "<p>" + docWho[12] + "<br />" + whoYrs[12] + "</p>";
-				tableCell[17].innerHTML	= "<p>" + docWho[13] + "<br />" + whoYrs[13] + "</p>";
-				tableCell[20].innerHTML	= "<p>" + docWho[14] + "<br />" + whoYrs[14] + "</p>";
-				tableCell[23].innerHTML	= "<p>" + docWho[15] + "<br />" + whoYrs[15] + "</p>";
+				tableCell[2].innerHTML	= "<p>" + docWho[9] + "<br>" + whoYrs[9] + "</p>";
+				tableCell[5].innerHTML	= "<p>" + docWho[10] + "<br>" + whoYrs[10] + "</p>";
+				tableCell[8].innerHTML	= "<p>" + docWho[11] + "<br>" + whoYrs[11] + "</p>";
+				tableCell[11].innerHTML	= "<p>" + docWho[8] + "<br>" + whoYrs[8] + "</p>";
+				tableCell[14].innerHTML	= "<p>" + docWho[12] + "<br>" + whoYrs[12] + "</p>";
+				tableCell[17].innerHTML	= "<p>" + docWho[13] + "<br>" + whoYrs[13] + "</p>";
+				tableCell[20].innerHTML	= "<p>" + docWho[14] + "<br>" + whoYrs[14] + "</p>";
+				tableCell[23].innerHTML	= "<p>" + docWho[15] + "<br>" + whoYrs[15] + "</p>";
 				break;
 		} // end switch
 	} // end for*/

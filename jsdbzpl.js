@@ -1,27 +1,12 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/25/2016
+Date: 9/29/2016
 Filename: jsdbzpl.js
 */
 
 
 //	Define any variables I will need in my page.
-//	Legend of Zelda copyright Nintendo.
-var crest = "images/hyrulecrest.png";
-var rinku = "images/link.jpg";
-var zelda = "images/zelda.jpg";
-var ganon = "images/ganon.jpg";
-var armor = "images/BotWArmor.jpg";
-//	Star Wars characters copyright Disney.
-var sw = "images/sw.jpg";
-var luke = "images/luke.jpg";
-var leia = "images/leia.jpg";
-var vader = "images/vader.jpg";
-//	Video Game toons copyright their respective owners.
-var xal1 = "images/xal1.png";
-var xal2 = "images/xal2.jpg";
-var xal3 = "images/xal3.jpg";
 
 //	Variables for my DragonBall Z Power Level function.
 var totalPwrLvl = 0;
