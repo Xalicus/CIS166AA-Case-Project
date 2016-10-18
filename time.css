@@ -1,8 +1,8 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/12/2016
-Filename: styles.css
+Date: 10/16/2016
+Filename: form.css
 */
 
 
@@ -194,6 +194,25 @@ article {
 	text-align: center;
 }
 
+article h2 {
+   font-size: 36pt;
+   font-family: "Racing Sans One", garamond, "times new roman", times, serif;
+   color: rgb(46,49,146);
+}
+
+article h3 {
+   font-size: 24pt;
+   font-family: "Racing Sans One", garamond, "times new roman", times, serif;
+   color: rgb(46,49,146);
+}
+
+article h4 {
+   font-size: 14pt;
+   font-family: roboto, arial, helvetica, sans-serif;
+   color: rgb(46,49,146);
+   margin-top: 10px;
+}
+
 article figure figcaption p {
 	font-size: 16px;
 	color: rgb(150,190,150);
@@ -204,9 +223,119 @@ article figure figcaption p a:link {
 	color: rgb(13,177,75);
 }
 
+/* urPast section */
+/*
+#urPast {
+   float: center;
+   width: 480px;
+   border: 1px solid black;
+   background: darkgreen;
+   padding: 10px;
+   -moz-border-radius-topleft: 10px;
+   -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+   -moz-border-radius-topright: 10px;
+   -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+}*/
+
+#countupSection {
+   display: none;
+}
+
+#countup {
+   font-weight: bold;
+}
+
+/* calendar */
+#cal {
+   display: none;
+   position: absolute;
+   border: 2px solid rgb(150,50,150);
+   left: 450px;
+   top: 150px;
+   background: green;
+   color: black;
+   padding: 10px;
+   -moz-border-radius-topleft: 10px;
+   -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+   -moz-border-radius-topright: 10px;
+   -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#cal table {
+   clear: both;
+}
+
+#cal table caption {
+   font-weight: bold;
+   font-size: 14pt;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   background: rgb(150,50,150);
+}
+
+#cal table th {
+   text-align: right;
+}
+
+#cal table th, #cal table td {
+   width: 2em;
+   padding: 4px;
+}
+
+#cal table td {
+   color: rgb(178,184,183);
+   text-align: right;
+   cursor: pointer;
+}
+
+#prev {
+   float: left;
+   padding: 4px;
+   cursor: pointer;
+}
+
+#next {
+   float: right;
+   padding: 4px;
+   cursor: pointer;
+}
+
+#cal table td.futuredate {
+   color: white;
+}
+
+#cal table td.futuredate:hover, #prev:hover, #next:hover, #close:hover {
+   background: rgb(150,50,150);
+   color: black;
+}
+
+#cal table td.pastdate {
+   color: white;
+}
+
+#cal table td.pastdate:hover, #prev:hover, #next:hover, #close:hover {
+   background: rgb(150,50,150);
+   color: black;
+}
+
+#close {
+   color: black;
+   float: right;
+   padding: 0 4px;
+   cursor: pointer;
+}
+
+#close span {
+   font-size: 20pt;
+}
+
 /* Table stuff */
 article table {
-   width: 100%;
+   width: 640px;
    text-align: center;
    table-layout: fixed;
 }
@@ -214,10 +343,6 @@ article table {
 article table caption {
    padding: 5px;
    width: 300px;
-}
-
-article tr td:first-child, article tr td:last-child {
-   background: #DDDDDD;
 }
 
 article th, article td {
@@ -228,25 +353,21 @@ article th, article td {
 }
 
 article tr td:first-of-type, article tr th:first-of-type {
-   border-left: 0;
+   border-left: 1;
 }
 
 article tr td:last-of-type, article tr th:last-of-type {
-   border-right: 0;
+   border-right: 1;
 }
 
 article th {
    font-weight: 700;
-   background: #EFE0B9;
+   background: pink;
 }
 
 article td p:first-of-type {
    font-weight: 900;
    text-align: right;
-}
-
-article div h3 {
-	color: darkblue;
 }
 
 article div p {
@@ -269,6 +390,7 @@ h3 {
 	font-weight: bold;
 	margin: 4px;
 	text-align: left;
+	color: darkblue;
 }
 
 
@@ -279,7 +401,7 @@ form {
 }
 
 form fieldset{
-	border: none; 
+	border: 2px; 
 	background: green;
 	position: relative;
 }
@@ -291,7 +413,7 @@ form legend {
 }
 
 form legend span {
-	position: relative;
+	position: center;
 	top: 10px;
 }
 
@@ -299,31 +421,17 @@ form label {
 	display: block;
 	font-size: 1.2em;
 	width: 530px;
-	text-align: right;
+	text-align: center;
 }
+
 form label p {
 	float: left;
 	width: 100%;
-	text-align: right;
+	text-align: center;
 }
 
 form label p:nth-child(2) {
 	font-size: 0.8em;
-}
-
-form input {
-	padding: 1%;
-	background: #333;
-	color: #BBB;
-	border: none;
-	font: normal 1em/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	float: right;
-	clear: both;
-	width: 100px;
-	margin-left: 10px;
-	margin-bottom: 20px;
-	position: relative;
-	top: -0.4em;
 }
 
 form input[type="checkbox"] {
@@ -347,3 +455,7 @@ footer {
 footer p {
 	text-align: center;
 }
+
+
+
+

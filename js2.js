@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 9/29/2016
+Date: 10/12/2016
 Filename: js2.js
 */
 

@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/2/2016
+Date: 10/12/2016
 Filename: form.js
 */
 
@@ -10,6 +10,7 @@ Filename: form.js
 
 /*	global variables */
 var formValidity = true;
+var err404 = "images/error404.jpg";
 
 
 /*	remove default values and formatting from state and delivery date selection lists */
@@ -219,6 +220,7 @@ function validateForm(evt) {
 	} else {
 		document.getElementById("errorText").innerHTML = "You better Tech yourself, before you reck yourself!";
 		document.getElementById("errorText").style.display = "block";
+		document.getElementById("errorPic").src = err404;
 		scroll(0,0);
 	}
 }
