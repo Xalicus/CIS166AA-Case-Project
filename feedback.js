@@ -11,6 +11,10 @@ Filename: feedback.js
 /*	global variables */
 var formValidity = true;
 var err404 = "images/error404.jpg";
+var profile = {};
+var lodging = [];
+var objectString;
+var arrayString;
 
 
 /*	remove default values and formatting from state and delivery date selection lists */
@@ -24,6 +28,7 @@ function removeSelectDefaults() {
 
 
 /*	remove fallback placeholder text */
+/*
 function zeroPlaceholder() {
 	var messageBox = document.getElementById("customText");
 	messageBox.style.color = "black";
@@ -31,10 +36,11 @@ function zeroPlaceholder() {
 	if (messageBox.value === messageBox.placeholder) {
 		messageBox.value = "";
 	}
-}
+}*/
 
 
 /*	restore placeholder text if box contains no user entry */
+/*
 function checkPlaceholder() {
 	var messageBox = document.getElementById("customText");
 	
@@ -42,11 +48,11 @@ function checkPlaceholder() {
 		messageBox.style.color = "rgb(178,184,183)";
 		messageBox.value = messageBox.placeholder;
 	}
-}
+}*/
 
 
 /*	adds fallback placeholder text */
-
+/*
 function generatePlaceholder() {
 	if (!Modernizr.input.placeholder) {
 		var messageBox = document.getElementById("customText");
@@ -61,53 +67,39 @@ function generatePlaceholder() {
 			messageBox.attachEvent("onblur", checkPlaceholder);
 		}
 	}
-}
+}*/
 
 
-/*	automatically check Custom message check box if user makes entry in customText box */
-function autocheckCustom() {
-	var messageBox = document.getElementById("customText");
-	
-	if (messageBox.value !== "" && messageBox.value !== messageBox.placeholder) {
-		// if user entry is text, check Custom check box
-		document.getElementById("customText").checked = "checked";
-	}
-}
-
-
-/*	validate names fieldsets */
-function validateName(fieldsetId) {
-	var inputElements = document.querySelectorAll("#" + fieldsetId + " input");
-	var errorDiv = document.querySelectorAll("#" + fieldsetId + " .errorMessage")[0];
-	var fieldsetValidity = true;
-	var elementCount = inputElements.length;
-	var currentElement;
-	
+// validate entered username
+function validateUname() {
+	var unInput = document.getElementById("unames");
+	var errorDiv = document.querySelector("#unames .errorMessage");
 	try {
-		for (var i = 0; i < elementCount; i++) {
-			// validate all input elements in fieldset
-			currentElement = inputElements[i];
-			if (currentElement.value === "") {
-				currentElement.style.background = "rgb(255,233,233)";
-				currentElement.style.border = "2px solid red";
-				fieldsetValidity = false;
-			} else {
-				currentElement.style.background = "white";
-			}
+//	   if (unInput.value.length < 4) {
+		if (/.{4,}/.test(unInput.value) === false) {
+		   throw "Username must be at least 4 characters long";
+		} else if (/\W/.test(unInput.value) === true) {
+			throw "Username must contains only letters and numbers";
 		}
 
-		if (fieldsetValidity === false) {
-			// throw appropriate message based on current fieldset
-			if (fieldsetId === "names") {
-				throw "Please type in your full name.";
-			}
-		} else {
-			errorDiv.style.display = "none";
-			errorDiv.innerHTML = "";
-		}
-	} catch (msg) {
+		// remove any username error styling and message
+		unInput.style.background = "";
+		errorDiv.style.display = "none";
+		errorDiv.innerHTML = "";
+		// copy valid username value to profile object
+		profile.username = unInput.value;
+		// copy profile.username value to profile section
+		document.getElementById("profileUname").innerHTML = profile.username;
+		// make profile section and username section visible
+		document.getElementById("profile").style.display = "block";
+		document.getElementById("unameSection").style.display = "block";
+	}
+	catch(msg) {
+		// display error message
 		errorDiv.style.display = "block";
 		errorDiv.innerHTML = msg;
+		// change input style
+		unInput.style.background = "rgb(255,233,233)";
 		formValidity = false;
 	}
 }
@@ -116,24 +108,18 @@ function validateName(fieldsetId) {
 // validate entered email
 function validateEmail() {
 	var emailInput = document.getElementById("emailbox");
-	var emailFormat = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
 	var errorDiv = document.querySelector("#emails .errorMessage");
-//	var errorDiv = document.getElementById("emailError");
+	var emailFormat = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
 	try {
-//		if (emailInput.value.search(/@/) === -1 || emailInput.value.lastIndexOf(".") === -1) {
-//		if (
-//			(/@/.test(emailInput.value) === false) || (
-//				(/\...$/.test(emailInput.value) === false) &&
-//				(/\....$/.test(emailInput.value) === false) &&
-//				(/\.....$/.test(emailInput.value) === false) &&
-//				(/\.......$/.test(emailInput.value) === false)
-//			)
-//		) {
-
-		if ((/@/.test(emailInput.value) === false) ||
-			(/\..{2,6}$/.test(emailInput.value) === false)) {
+		
+		if (emailFormat.test(emailInput.value) === false) {
 			throw "Please provide a valid email address";
 		}
+		
+//		if ((/@/.test(emailInput.value) === false) ||
+//			(/\..{2,6}$/.test(emailInput.value) === false)) {
+//			throw "Please provide a valid email address";
+//		}
 
 		// remove any email error styling and message
 		emailInput.style.background = "";
@@ -158,6 +144,37 @@ function validateEmail() {
 		emailInput.style.background = "rgb(255,233,233)";
 		formValidity = false;
 	}
+	
+/*	var emailInput = document.getElementById("emailbox");
+	var errorDiv = document.getElementById("emailError");
+	var emailCheck = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
+	try {
+		if (emailCheck.test(emailInput.value) === false) {
+			throw "Please provide a valid email address";
+		}
+
+		// remove any email error styling and message
+		emailInput.style.background = "";
+		errorDiv.innerHTML = "";
+		errorDiv.style.display = "none";
+		// convert email address to lowercase
+		emailInput.value = emailInput.value.toLowerCase();
+
+		// copy valid email value to profile object
+		profile.email = emailInput.value;
+		// copy profile.email value to profile section
+		document.getElementById("profileEmail").innerHTML = profile.email;
+		// make profile section and email section visible
+		document.getElementById("profile").style.display = "block";
+		document.getElementById("emailSection").style.display = "block";
+	}
+	catch(msg) {
+		// display error message
+		errorDiv.innerHTML = msg;
+		errorDiv.style.display = "block";
+		// change input style
+		emailInput.style.background = "rgb(255,233,233)";
+	}*/
 }
 
 
@@ -198,15 +215,15 @@ function validateCell() {
 
 /*	validate Doctor Who fieldset */
 function validateDoctor() {
-	var selectElements = document.querySelectorAll("#doctorWho select");
+	var docInput = document.querySelectorAll("#doctorWho select");
 	var errorDiv = document.querySelector("#doctorWho .errorMessage");
 	var fieldsetValidity = true;
-	var elementCount = selectElements.length;
+	var elementCount = docInput.length;
 	var currentElement;
 	
 	try {
 		for (var i = 0; i < elementCount; i++) {
-			currentElement = selectElements[i];
+			currentElement = docInput[i];
 			if (currentElement.selectedIndex === -1) {
 				currentElement.style.border = "2px solid red";
 				fieldsetValidity = false;
@@ -214,6 +231,18 @@ function validateDoctor() {
 				currentElement.style.border = "";
 			}
 		}
+		
+		// remove any doctor who error styling and message
+		docInput.style.background = "";
+		errorDiv.style.display = "none";
+		errorDiv.innerHTML = "";
+		// copy valid doctor who value to profile object
+		profile.doctor = docInput.value;
+		// copy profile.doctor value to profile section
+		document.getElementById("profileDoctor").innerHTML = profile.doctor;
+		// make profile section and doctor who section visible
+		document.getElementById("profile").style.display = "block";
+		document.getElementById("doctorSection").style.display = "block";
 		
 		if (fieldsetValidity === false) {
 			throw "Please specify a Doctor you like.";
@@ -224,30 +253,6 @@ function validateDoctor() {
 	} catch (msg) {
 		errorDiv.style.display = "block";
 		errorDiv.innerHTML = msg;
-		formValidity = false;
-	}
-}
-
-
-/*	validate message fieldset */
-function validateMessage() {
-	var errorDiv = document.querySelector("#comments .errorMessage");
-	var msgBox = document.getElementById("comment");
-	
-	try {
-		if (document.getElementById("customText".checked) && ((msgBox.value === "") || (msgBox.value === msgBox.placeholder))) {
-			// customText checked but comment box empty
-			throw "Please enter your comment text.";
-		} else {
-			errorDiv.style.display = "none";
-			msgBox.style.background = "white";
-			msgBox.style.border = "2px solid red";
-		}
-	} catch (msg) {
-		errorDiv.style.display = "block";
-		errorDiv.innerHTML = msg;
-		msgBox.style.background = "rgb(255,233,233)";
-		msgBox.style.border = "2px solid red";
 		formValidity = false;
 	}
 }
@@ -271,6 +276,19 @@ function validateAge(){
 		if (ageNotNum) {
 			throw "Must contain numbers only.";
 		}
+		
+		// remove any age error styling and message
+		ageNumElement.style.background = "";
+		errorDiv.style.display = "none";
+		errorDiv.innerHTML = "";
+		// copy valid age value to profile object
+		profile.age = ageNumElement.value;
+		// copy profile.age value to profile section
+		document.getElementById("profileAge").innerHTML = profile.age;
+		// make profile section and age section visible
+		document.getElementById("profile").style.display = "block";
+		document.getElementById("ageSection").style.display = "block";
+		
 	} catch (msg) {
 		if (ageNotNum) {
 			ageNumElement.style.background = "rgb(255,233,233)";
@@ -291,19 +309,19 @@ function validateForm(evt) {
 		evt.returnValue = false; // prevent form from submitting in IE8
 	}
 	formValidity = true; // reset value for revalidation
-	validateName("names");
+	validateUname();
 	validateEmail();
 	validateCell();
-	validateDoctor();
-	validateMessage();
 	validateAge();
+	validateDoctor();
 	
 	if (formValidity === true) {
 		document.getElementById("errorText").innerHTML = "";
 		document.getElementById("errorText").style.display = "none";
+		document.getElementById("errorpic").style.display = "none";
 		document.getElementsByTagName("form")[0].submit();
 	} else {
-		document.getElementById("errorText").innerHTML = "You better Tech yourself, before you reck yourself!";
+		document.getElementById("errorText").innerHTML = "Please fix all errors on the page to continue!";
 		document.getElementById("errorText").style.display = "block";
 		document.getElementById("errorPic").src = err404;
 		scroll(0,0);
@@ -311,31 +329,77 @@ function validateForm(evt) {
 }
 
 
+//convert form input to strings for submission
+function convertToString() {
+	// convert lodging array to string
+//	arrayString = lodging.toString();
+	// convert profile object to string
+	objectString = JSON.stringify(profile);
+}
+
+
 /*	create event listeners */
 function createEventListeners() {
-	var messageBox = document.getElementById("customText");
-	
-	if (messageBox.addEventListener) {
-		messageBox.addEventListener("blur", autocheckCustom, false);
-	} else if (messageBox.attachEvent) {
-		messageBox.attachEvent("onblur", autocheckCustom);
-	}
-	
+//	var nameIP = document.getElementById("names");
+	var unIP = document.getElementById("unames");
+	var emailIP = document.getElementById("emails");
+	var cellIP = document.getElementById("cells");
+//	var genderIP = document.getElementById("genders");
+	var ageIP = document.getElementById("ages");
+	var docIP = document.getElementById("doctorWho");
 	var form = document.getElementsByTagName("form")[0];
+	var button = document.getElementById("submitBtn");
+	
+	if (unIP.addEventListener) {
+//		nameIP.addEventListener("change", validateName, false);
+		unIP.addEventListener("change", validateUname, false);
+		emailIP.addEventListener("change", validateEmail, false);
+		cellIP.addEventListener("change", validateCell, false);
+//		genderIP.addEventListener("change", validateGender, false);
+		ageIP.addEventListener("change", validateAge, false);
+		docIP.addEventListener("change", validateDoctor, false);
+		form.addEventListener("submit", validateForm, false);
+	} else if (unIP.attachEvent) {
+//		nameIP.attachEvent("onchange", validateName);
+		unIP.attachEvent("onchange", validateUname);
+		emailIP.attachEvent("onchange", validateEmail);
+		cellIP.attachEvent("onchange", validateCell);
+//		genderIP.attachEvent("onchange", validateGender);
+		ageIP.attachEvent("onchange", validateAge);
+		docIP.attachEvent("onchange", validateDoctor);
+		form.attachEvent("onsubmit", validateForm);
+	}
+   
+/*	var lodgings = document.getElementsByName("lodgings");
+	if (lodgings[0].addEventListener) {
+		for (var i = 0; i < lodgings.length; i++) {
+			lodgings[i].addEventListener("change", registerLodging, false);
+		}
+	} else if (lodgings[0].attachEvent) {
+		for (var i = 0; i < lodgings.length; i++) {
+			lodgings[i].attachEvent("onchange", registerLodging);
+		}
+	}*/
 	
 	if (form.addEventListener) {
-		form.addEventListener("submit", validateForm, false);
+		form.addEventListener("click", validateForm, false);
 	} else if (form.attachEvent) {
-		form.attachEvent("onsubmit", validateForm);
+		form.attachEvent("onclick", validateForm);
+	}
+
+	if (button.addEventListener) {
+		button.addEventListener("click", convertToString, false);
+	} else if (button.attachEvent) {
+		button.attachEvent("onclick", convertToString);
 	}
 }
 
 
 /*	run initial form configuration functions */
 function setUpPage() {
-	removeSelectDefaults();
 	createEventListeners();
-	generatePlaceholder();
+//	removeSelectDefaults();
+//	generatePlaceholder();
 }
 
 
@@ -346,3 +410,131 @@ if (window.addEventListener) {
 } else if (window.attachEvent) {
 	window.attachEvent("onload", setUpPage);
 }
+
+
+
+
+
+
+/*	validate names fieldsets */
+/*function validateName(fieldsetId) {
+//	var inputElements = document.querySelectorAll("#" + fieldsetId + " input");
+	var fName = document.getElementById("fname");
+	var lName = document.getElementById("lname");
+	var nameInput = (fName + " " + lName);
+	var errorDiv = document.querySelectorAll("#names .errorMessage")[0];
+	var fieldsetValidity = true;
+//	var elementCount = inputElements.length;
+//	var currentElement;
+	
+	try {
+		for (var i = 0; i < elementCount; i++) {
+			// validate all input elements in fieldset
+			//nameInput = fName + " " + lName; //inputElements[i];
+			if (nameInput.value === "") {
+				nameInput.style.background = "rgb(255,233,233)";
+				nameInput.style.border = "2px solid red";
+				fieldsetValidity = false;
+			} else {
+				nameInput.style.background = "white";
+			}
+		}
+		
+		nameInput.style.background = "";
+		errorDiv.style.display = "none";
+		errorDiv.innerHTML = "";
+		profName = nameInput.value;
+		document.getElementById("profileName").innerHtml = profName;
+		document.getElementById("profile").style.display = "block";
+		document.getElementById("nameSection").style.display = "block";
+
+		if (fieldsetValidity === false) {
+			// throw appropriate message based on current fieldset
+			if (fieldsetId === "names") {
+				throw "Please type in your full name.";
+			}
+		} else {
+			errorDiv.style.display = "none";
+			errorDiv.innerHTML = "";
+		}
+	} catch (msg) {
+		errorDiv.style.display = "block";
+		errorDiv.innerHTML = msg;
+		profName.style.background = "rgb(255,233,233)";
+		formValidity = false;
+	}
+}*/
+
+
+
+
+/*
+// validate entered password
+function validatePassword() {
+   var pw1Input = document.getElementById("pw1");
+   var pw2Input = document.getElementById("pw2");
+   var errorDiv = document.getElementById("passwordError");
+   try {
+//	   if (pw1Input.value.length < 8) {
+		if (/.{8,}/.test(pw1Input.value) === false) {
+			throw "Password must be at least 8 characters";
+		} else if (pw1Input.value.localeCompare(pw2Input.value) !== 0) {
+			throw "Passwords must match";
+		} else if (/[a-zA-Z]/.test(pw1Input.value) === false) {
+			throw "Password must contains at least one letter";
+		} else if (/\d/.test(pw1Input.value) === false) {
+			throw "Password must contain at least one number";
+		} else if (/[!@#_]/.test(pw1Input.value) === false) {
+			throw "Password must contain at least one of the following symbols: ! @ # _";
+		}
+
+      // remove any password error styling and message
+      pw1Input.style.background = "";
+      pw2Input.style.background = "";
+      errorDiv.style.display = "none";
+      errorDiv.innerHTML = "";
+      // copy valid password to profile object
+      profile.password = pw1Input.value;
+   }
+   catch(msg) {
+      // display error message
+      errorDiv.style.display = "block";
+      errorDiv.innerHTML = msg;
+      // change input style
+      pw1Input.style.background = "rgb(255,233,233)";
+      pw2Input.style.background = "rgb(255,233,233)";      
+   }
+}
+
+// add lodging to profile
+function registerLodging(event) {
+   if (event === undefined) { // get caller element in IE8
+      event = window.event;
+   }
+   var callerElement = event.target || event.srcElement;
+   var lodgingName = callerElement.value;
+   if (callerElement.checked) { // if box has just been checked
+		// add checkbox value to lodging array
+		lodging.push(lodgingName);
+      // add checkbox value to list in profile section
+      var newLodging = document.createElement("li");
+      newLodging.innerHTML = lodgingName;
+      document.getElementById("profileLodgings").appendChild(newLodging);
+      // make profile section and lodging section visible
+      document.getElementById("profile").style.display = "block";
+      document.getElementById("lodgingsSection").style.display = "block";
+   } else { // if box has just been unchecked
+      var listItems = document.querySelectorAll("#profileLodgings li");
+      for (var i = 0; i < listItems.length; i++) {
+         if (listItems[i].innerHTML === lodgingName) {
+			// remove element at index i from array
+			lodging.splice(i, 1);
+            // remove lodging from profile list
+            listItems[i].parentNode.removeChild(listItems[i]);
+            break;
+         }
+      }
+   }
+}*/
+
+

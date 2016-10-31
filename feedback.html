@@ -48,9 +48,13 @@
 				
 				<li><section id="profile">
 					<h3>Profile</h3>
-					<div id="nameSection">
+					<!--<div id="nameSection">
 						<h4>Name: </h4>
 						<p id="profileName"></p>
+					</div>-->
+					<div id="unameSection">
+						<h4>Username: </h4>
+						<p id="profileUname"></p>
 					</div>
 					<div id="emailSection">
 						<h4>Email address: </h4>
@@ -60,25 +64,17 @@
 						<h4>Cell Phone: </h4>
 						<p id="profileCell"></p>
 					</div>
-					<div id="cellSection">
+					<div id="genderSection">
 						<h4>Gender: </h4>
 						<p id="profileGender"></p>
 					</div>
-					<div id="cellSection">
+					<div id="ageSection">
 						<h4>Age: </h4>
 						<p id="profileAge"></p>
 					</div>
-					<div id="cellSection">
-						<h4>Pets: </h4>
-						<p id="profilePets"></p>
-					</div>
-					<div id="cellSection">
+					<div id="doctorSection">
 						<h4>Doctor: </h4>
 						<p id="profileDoctor"></p>
-					</div>
-					<div id="lodgingsSection">
-						<h4>Message: </h4>
-						<ul id="profileMsg"></ul>
 					</div>
 				</section></li>
 			</ul>
@@ -91,52 +87,57 @@
 			<br>
 			<br>
 			
-			<form action="formdone.html" novalidate="novalidate">
+			<form novalidate="novalidate">
 				<fieldset>
 				<legend><h3><span>Order Form</span></h3></legend><br>
 					
-					<fieldset id="names" class="text">
-					<p><legend>Full Name section</legend></p>
-					<p><label for="fname">First Name:</label><br>
+					<!--<fieldset id="names" class="text">
+					<p><legend>Name section</legend></p>
+					<p><label for="fname">First Name:</label>
 					<input type="textbox" id="fname" name="FirstName" placeholder="Enter first name:" required autofocus>
-					<br><br>
+					<br>
 					
-					<label for="lname">Last Name:</label><br>
-					<input type="textbox" id="lname" name="LastName" placeholder="Enter last name:" required></p><br>
+					<label for="lname">Last Name:</label>
+					<input type="textbox" id="lname" name="LastName" placeholder="Enter last name:" required></p>
 					<div class="errorMessage"></div>
-					</fieldset>
+					</fieldset>-->
+					
+					<fieldset id="unames" class="text">
+					<p><legend>Username Section</legend></p>
+					<p><label for="uname">Username:</label>
+					<input type="text" id="uname" name="UserName" placeholder="Enter username here:" required></p>
+					<div class="errorMessage"></div>
 					
 					<fieldset id="emails" class="text">
 					<p><legend>Email Address section</legend></p>
-					<p><label for="email">Email Address: </label><br>
-					<input type="email" id="emailbox" name="Email" placeholder="Enter a valid email address:" required></p><br>
+					<p><label for="email">Email Address: </label>
+					<input type="email" id="emailbox" name="Email" placeholder="Enter a valid email address:" required></p>
 					<div class="errorMessage"></div>
 					</fieldset>
 					
 					<fieldset id="cells" class="text">
 					<p><legend>Phone Number section</legend></p>
-					<p><label for="cell">Cell Phone:</label><br>
-					<input type="textbox" id="cell" name="Cell" placeholder="(###) ###-####" required></p><br>
+					<p><label for="cell">Cell Phone:</label>
+					<input type="textbox" id="cell" name="Cell" placeholder="(###) ###-####" required></p>
 					<div class="errorMessage"></div>
 					</fieldset>
 					
 					<fieldset id="genders" class="text">
 					<p><legend>Gender section</legend></p>
-					<p><label for="gender">Pick your gender:</label><br>
+					<p><label for="gender">Pick your gender:</label>
 					Male: <input type="radio" id="gender" name="Gender" value="Male">
-					Female: <input type="radio" id="gender" name="Gender" value="Female" checked>
-					Alien: <input type="radio" id="gender" name="Gender" value="Alien"></p><br>
+					Female: <input type="radio" id="gender" name="Gender" value="Female" checked></p>
 					<div class="errorMessage"></div>
 					</fieldset>
 					
 					<fieldset id="ages" class="text">
 					<p><legend>Age section</legend></p>
-					<p><label for="age">What is your age?</label><br>
+					<p><label for="age">What is your age?</label>
 					<input type="number" id="age" name="Age" placeholder="18" min="1" max="130" required="required"></p><br>
 					<div class="errorMessage"></div>
 					</fieldset>
 					
-					<fieldset id="petscheck" class="checks">
+					<!--<fieldset id="petscheck" class="checks">
 					<p><legend>Pets section</legend></p>
 					<p><label for="pets">How many pets do you own?</label><br>
 					0: <input type="checkbox" id="pets" name="HowManyPets" value="0">
@@ -145,11 +146,11 @@
 					3: <input type="checkbox" id="pets" name="HowManyPets" value="3">
 					4: <input type="checkbox" id="pets" name="HowManyPets" value="4"></p><br>
 					<div class="errorMessage"></div>
-					</fieldset>
+					</fieldset>-->
 					
 					<fieldset id="doctorWho" class="checks">
 					<p><legend>Doctor Who section</legend></p>
-					<p><label for="docwho">Who is your favorite Doctor?</label><br>
+					<p><label for="docwho">Who is your favorite Doctor?</label>
 					<select id="docwho" name="FavoriteDoctor" required>
 						<option>Doctor 1: William Hartnell</option>
 						<option>Doctor 2: Patrick Troughton</option>
@@ -168,23 +169,10 @@
 					<div class="errorMessage"></div>
 					</fieldset>
 					
-					<fieldset id="comments" class="text">
-					<p><legend>Custom Text section</legend></p>
-					<p><label for="comment">Comments Text Areas:</label>
-					<input type="checkbox" id="customText" name="SendComment"><br>
-					<textarea id="comment" name="Comment" placeholder="Enter comments here (max 250 characters)" maxlength="250"></textarea></p><br>
-					<div class="errorMessage"></div>
-					</fieldset>
-					
-					<!--
-					<p><label for="slider">Slider for fun</label><br>
-					<input type="range" id="slider" name="FunSlider" min="0" max="10">
-					</p>-->
-					
 					<div id="buttonContainer">
 					<input type="submit" value="Submit Your Will" id="orderButton">
 					<br><br>
-					<input type="button" id="createBtn" value="Submit your feedback" />
+					<input type="button" id="submitBtn" value="Submit your feedback" />
 					<!--<input type="reset" value="Reset Your Will" id="resetForm">-->
 					</div>
 					<br><br><br>
@@ -202,6 +190,6 @@
 		</footer>
 		
 		</div>
-		<script src="form.js"></script>
+		<script src="feedback.js"></script>
 	</body>
 </html>

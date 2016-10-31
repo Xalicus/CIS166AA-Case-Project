@@ -282,6 +282,32 @@ h3 {
 }
 
 
+/* profile section */
+#profile {
+   float: center;
+   width: 320px;
+   border: 1px solid black;
+   background: green;
+   padding: 20px;
+/*   background: rgb(216,217,219);*/
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   display: none;
+}
+
+/*
+#profile, #nameSection, #unameSection, #emailSection, #cellSection, #genderSection, #ageSection, #doctorSection {
+   display: none;
+   display: block;
+}*/
+
+#profile li, #profile p {
+   text-indent: 1em;
+   margin-top: 5px;
+}
+
+
 /* form */
 form {
 	width: 720px;
