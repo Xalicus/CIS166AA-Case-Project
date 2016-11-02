@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/12/2016
+Date: 10/31/2016
 Filename: jsdbzpl.js
 */
 
@@ -11,7 +11,7 @@ Filename: jsdbzpl.js
 //	Variables for my DragonBall Z Power Level function.
 var totalPwrLvl = 0;
 var pwrLvlCost = 0;
-var age = document.getElementById("age");
+//var age = document.getElementById("age");
 var over9k = false;
 var alien = false;
 
@@ -70,7 +70,7 @@ function createEventListeners() {
 
 //	This will set all the Power Level form field values to defaults.
 function resetLvl() {
-	ageFieldset.value = age;
+	ageFieldset.value = ageBox;
 	over9kFieldset.checked = over9k;
 	alienFieldset.checked = alien;
 	calcPwrLvl();
@@ -80,7 +80,7 @@ function resetLvl() {
 
 //	The function should validate the age in the Power Level form from getting text in the number spots.
 function valAgeForm() {
-	var valAge = age;
+	var valAge = ageBox;
 	var validity = true;
 	var messageText = "";
 	

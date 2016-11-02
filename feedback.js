@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/23/2016
+Date: 10/31/2016
 Filename: feedback.js
 */
 
@@ -27,55 +27,11 @@ function removeSelectDefaults() {
 }
 
 
-/*	remove fallback placeholder text */
-/*
-function zeroPlaceholder() {
-	var messageBox = document.getElementById("customText");
-	messageBox.style.color = "black";
-	
-	if (messageBox.value === messageBox.placeholder) {
-		messageBox.value = "";
-	}
-}*/
-
-
-/*	restore placeholder text if box contains no user entry */
-/*
-function checkPlaceholder() {
-	var messageBox = document.getElementById("customText");
-	
-	if (messageBox.value === "") {
-		messageBox.style.color = "rgb(178,184,183)";
-		messageBox.value = messageBox.placeholder;
-	}
-}*/
-
-
-/*	adds fallback placeholder text */
-/*
-function generatePlaceholder() {
-	if (!Modernizr.input.placeholder) {
-		var messageBox = document.getElementById("customText");
-		messageBox.value = messageBox.placeholder;
-		messageBox.style.color = "rgb(178,184,183)";
-		
-		if (messageBox.addEventListener) {
-			messageBox.addEventListener("focus", zeroPlaceholder, false);
-			messageBox.addEventListener("blur", checkPlaceholder, false);
-		} else if (messageBox.attachEvent) {
-			messageBox.attachEvent("onfocus", zeroPlaceholder);
-			messageBox.attachEvent("onblur", checkPlaceholder);
-		}
-	}
-}*/
-
-
 // validate entered username
 function validateUname() {
 	var unInput = document.getElementById("unames");
 	var errorDiv = document.querySelector("#unames .errorMessage");
 	try {
-//	   if (unInput.value.length < 4) {
 		if (/.{4,}/.test(unInput.value) === false) {
 		   throw "Username must be at least 4 characters long";
 		} else if (/\W/.test(unInput.value) === true) {
@@ -115,11 +71,6 @@ function validateEmail() {
 		if (emailFormat.test(emailInput.value) === false) {
 			throw "Please provide a valid email address";
 		}
-		
-//		if ((/@/.test(emailInput.value) === false) ||
-//			(/\..{2,6}$/.test(emailInput.value) === false)) {
-//			throw "Please provide a valid email address";
-//		}
 
 		// remove any email error styling and message
 		emailInput.style.background = "";
@@ -144,37 +95,6 @@ function validateEmail() {
 		emailInput.style.background = "rgb(255,233,233)";
 		formValidity = false;
 	}
-	
-/*	var emailInput = document.getElementById("emailbox");
-	var errorDiv = document.getElementById("emailError");
-	var emailCheck = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
-	try {
-		if (emailCheck.test(emailInput.value) === false) {
-			throw "Please provide a valid email address";
-		}
-
-		// remove any email error styling and message
-		emailInput.style.background = "";
-		errorDiv.innerHTML = "";
-		errorDiv.style.display = "none";
-		// convert email address to lowercase
-		emailInput.value = emailInput.value.toLowerCase();
-
-		// copy valid email value to profile object
-		profile.email = emailInput.value;
-		// copy profile.email value to profile section
-		document.getElementById("profileEmail").innerHTML = profile.email;
-		// make profile section and email section visible
-		document.getElementById("profile").style.display = "block";
-		document.getElementById("emailSection").style.display = "block";
-	}
-	catch(msg) {
-		// display error message
-		errorDiv.innerHTML = msg;
-		errorDiv.style.display = "block";
-		// change input style
-		emailInput.style.background = "rgb(255,233,233)";
-	}*/
 }
 
 

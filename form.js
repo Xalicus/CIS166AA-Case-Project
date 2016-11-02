@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/12/2016
+Date: 10/31/2016
 Filename: form.js
 */
 
@@ -90,8 +90,9 @@ function validateName(fieldsetId) {
 			if (currentElement.value === "") {
 				currentElement.style.background = "rgb(255,233,233)";
 				currentElement.style.border = "2px solid red";
+				throw "Name fields must contains only letters";
 				fieldsetValidity = false;
-			} else {
+			} else if (/[a-zA-Z]/.test(currentElement.value) === false) {
 				currentElement.style.background = "white";
 			}
 		}
