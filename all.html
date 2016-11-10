@@ -4,23 +4,24 @@
 	<!--
 	CIS166AA: Case Project
 	Author: Kevin Ward
-	Date: 10/31/2016
+	Date: 11/8/2016
 	Filename: all.html
 	-->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Kevin Ward's Case Project</title>
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="styles.css">
 		<!-- Adding modernizr JavaScript link. -->
 		<script src="modernizr.custom.05819.js"></script>
+		<script src="modernizr.custom.65897.js"></script>
 	</head>
 	<body>
 		<div id="mainbody">
 			<header>
 				<h1>
-					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1" /></a>
-					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2" />
-					All Page
+					<a href="index.html"><img src="images/title.jpg" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo1"></a>
+					<img src="images/hyrulecrest.png" width="200" height="120" alt="Kevin's Hobbies" title="" id="logo2">
+					<p>Everything Page</p>
 				</h1>
 			</header>
 			
@@ -29,15 +30,14 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
 					<li><a href="docwho.html">Doctor Who</a></li>
+					<li><a href="feedback.html">Feedback</a></li>
 					<li><a href="vgm.html">Games & Movies</a></li>
-					<li><a href="websec.html">Web Security</a></li>
+					<li><a href="geoloc.html">GeoLocate</a></li>
 					<li><a href="form.html">Random Form</a></li>
 					<li><a href="time.html">TARDIS Entry</a></li>
-					<li><a href="feedback.html">Feedback</a></li>
+					<li><a href="websec.html">Web Security</a></li>
 					<li><a href="about.html">About Me</a></li>
 					<li id="currpage"><a href="all.html">All</a></li>
-					<!--This is for future pages.
-					<li><a href="page6.html">Page 6</a></li> -->
 				</ul>
 			</nav>
 		
@@ -147,14 +147,14 @@
 			<form>
 				<fieldset>
 				<legend><span>Dragon Ball Z Power Levels</span></legend><br>
-					<input type="number" min="1" max="100" id="age" value="18" name="age" />
+					<input type="number" min="1" max="100" id="age" value="18" name="age">
 					<label for="age">
 						<p>Type in your age (18 - 100)</p>
 					</label><br>
 				</fieldset>
 				<br>
 				<fieldset>
-					<input type="checkbox" id="over9k" name="over9k" />
+					<input type="checkbox" id="over9k" name="over9k">
 					<label for="over9k">
 						<p>Is your power level Extreme?</p>
 						<p>+9000</p>
@@ -162,7 +162,7 @@
 				</fieldset>
 				<br>
 				<fieldset>
-					<input type="checkbox" id="alien" name="alien" />
+					<input type="checkbox" id="alien" name="alien">
 					<label for="alien">
 						<p>If you are an alien check here.</p>
 						<p>+250</p>
@@ -183,7 +183,7 @@
 					<fieldset id="names" class="text">
 					<p><legend>Full Name section</legend></p>
 					<p><label for="fname">First Name:</label><br>
-					<input type="textbox" id="fname" name="FirstName" placeholder="Enter first name:" required autofocus>
+					<input type="textbox" id="fname" name="FirstName" placeholder="Enter first name:" required>
 					<br><br>
 					
 					<label for="lname">Last Name:</label><br>
@@ -246,15 +246,9 @@
 					<textarea id="comment" name="Comment" placeholder="Enter comments here (max 250 characters)" maxlength="250"></textarea></p><br>
 					<div class="errorMessage"></div>
 					</fieldset>
-					
-					<!--
-					<p><label for="slider">Slider for fun</label><br>
-					<input type="range" id="slider" name="FunSlider" min="0" max="10">
-					</p>-->
-					
+
 					<div id="buttonContainer">
 					<input type="submit" value="Submit Your Will" id="orderButton">
-					<!--<input type="reset" value="Reset Your Will" id="resetForm">-->
 					</div>
 					<br><br><br>
 				</fieldset>

@@ -5,7 +5,7 @@
 	CIS166AA: Case Project
 	Author: Kevin Ward
 	Date: 11/8/2016
-	Filename: index.html
+	Filename: geoloc.html
 	-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -27,12 +27,12 @@
 			
 			<nav>
 				<ul>
-					<li id="currpage"><a href="index.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
 					<li><a href="docwho.html">Doctor Who</a></li>
 					<li><a href="feedback.html">Feedback</a></li>
 					<li><a href="vgm.html">Games & Movies</a></li>
-					<li><a href="geoloc.html">GeoLocate</a></li>
+					<li id="currpage"><a href="geoloc.html">GeoLocate</a></li>
 					<li><a href="form.html">Random Form</a></li>
 					<li><a href="time.html">TARDIS Entry</a></li>
 					<li><a href="websec.html">Web Security</a></li>
@@ -42,19 +42,17 @@
 		
 		<aside>
 			<ul>
-				<li><p>Chapter 9 Case Project</p></li>
-				<li><p>Enhancing my Website.</p></li>
+				<li class="current"><p>GeoLocation Info:</p></li>
+				<li id="lat"><p>Latitude: </p></li>
+				<li id="lng"><p>Longitude: </p></li>
+				<li id="alt"><p>Altitude: </p></li>
 			</ul>
 		</aside>
 		
-		<article>			
+		<article id="loc">			
 			<br>
-			<h2><p>Enhancing my Website, one page at a time.</p></h2>
-			<div><h2><p><a href="#">--When you want to secure your site.--</a></p></h2>
-			<p>^^^</p>
-			<p>"<(^_^)>"</p>
-			<p>----</p></div>
-			<p><img src="images/error404.jpg" width="240" height="190" alt="Error Picture" title="Error Picture" id="errorPic"></p>
+			<h2><p>GeoLocation Map. Where are you now?</p></h2>
+			<div id="map"></div>
 			<br>
 		</article>
 		
@@ -63,6 +61,7 @@
 		</footer>
 		
 		</div>
-		<!--<script src="javascript.js"></script>-->
+		<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>-->
+		<script src="geoloc.js"></script>
 	</body>
 </html>

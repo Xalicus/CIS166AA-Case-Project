@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 10/31/2016
+Date: 11/8/2016
 Filename: styles.css
 */
 
@@ -44,7 +44,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	max-width: 1080px;
-	background: darkgreen;
+	background-color: #FFFFFF;
+	background-image: linear-gradient(#FFFFFF, #FFFFFF, #B5EAAA);
+	background-attachment: fixed;
 	margin: 0 auto;
 	font-family: Verdana, Geneva, sans-serif; 
 }
@@ -85,18 +87,19 @@ a:active {
 
 /* main body of the page */
 #mainbody {
-	background: green;
+	background-color: #C3FDB8;
 }
 
 /* header of the page */
 header {
-	background: rgb(40,60,80);
+	background-color: #B5EAAA;
 	width: 100%;
+	height: 125px;
 	font-family: 'Verdana', bold;
-	color: rgb(13,177,75);
+	color: #000000;
 	font-size: 70px;
 	text-align: right;
-	padding-right: 20px;
+	padding-right: 10px;
 	position: relative;
 }
 
@@ -114,42 +117,62 @@ header #logo2 {
 	position: absolute;
 	top: 0;
 	left: 150px;
+	opacity: 1.0;
+}
+
+header h1 p {
+	padding-top: 20px;
+	padding-right: 10px;
+	position: center;
 }
 
 /* navigation of the page */
 nav {
-	background: rgb(40,60,80);
+	background-color: #41A317;
+	padding: 7px 10px;
 	width: 100%;
-	font-size: 18px;
+	font-size: 14px;
+	text-align: center;
+	color: #000000;
+}
+
+nav #currpage {
+	background-color: #728C00;
+	padding: 7px 10px;
+	color: #000000;
 }
 
 nav ul {
-	margin-left: 320px;
+	margin-top: 0px;
+	margin-left: 0px;
 	text-align: center;
 }
 
 nav ul li {
 	display: inline-block;
-	padding: 10px 15px;
-	background: rgb(100,100,100);
-	-moz-border-radius-topleft: 10px;
+	padding: 7px 10px;
+	background: #B5EAAA;
+	color: #000000;
+/*	-moz-border-radius-topleft: 10px;
 	-moz-border-radius-topright: 10px;
 	-webkit-border-top-left-radius: 10px;
 	-webkit-border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-right-radius: 10px;*/
+	opacity: 1.0;
 }
 
 /* the current page being displayed. */
 nav ul #currpage {
-	background: rgb(15,180,75);
+	background: #728C00;
+	color: #000000;
 }
 
 /* sidebar */
 aside {
-	width: 360px;
+	width: 260px;
 	float: left;
-	background: rgb(15,180,75);
+	opacity: 1.0;
 }
 
 aside ul {
@@ -158,7 +181,7 @@ aside ul {
 
 aside ul li {
 	padding: 10px;
-	font-size: 24px;
+	font-size: 18px;
 }
 
 #gold:hover {
@@ -189,9 +212,50 @@ aside ul li {
 
 /* main content */
 article {
-	width: 720px;
+	width: 820px;
 	float: right;
 	text-align: center;
+	background-color: #F0FFFF;
+}
+
+article h2 {
+	font-size: 36pt;
+	font-family: "Racing Sans One", garamond, "times new roman", times, serif;
+	font-weight: bold;
+	margin: 5px;
+	color: rgb(46,49,146);
+}
+
+/*
+h2 {
+	font-size: 1.9em;
+	font-weight: bold;
+	margin: 5px;
+}*/
+
+article h3 {
+	font-size: 24pt;
+	font-family: "Racing Sans One", garamond, "times new roman", times, serif;
+	font-weight: bold;
+	margin: 4px;
+	text-align: left;
+	color: rgb(46,49,146);
+}
+
+/*
+h3 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 4px;
+	text-align: left;
+	color: darkblue;
+}*/
+
+article h4 {
+	font-size: 14pt;
+	font-family: roboto, arial, helvetica, sans-serif;
+	color: rgb(46,49,146);
+	margin-top: 10px;
 }
 
 article figure figcaption p {
@@ -204,49 +268,150 @@ article figure figcaption p a:link {
 	color: rgb(13,177,75);
 }
 
+#loc {
+   min-height: 500px;
+   padding: 0 20px;
+   display: block;
+}
+
+#map {
+   width: 100%;
+   min-height: 480px;
+}
+
+#countupSection {
+	display: none;
+}
+
+#countup {
+	font-weight: bold;
+}
+
+/* calendar */
+#cal {
+	display: none;
+	position: absolute;
+	border: 2px solid rgb(150,50,150);
+	left: 450px;
+	top: 150px;
+	background: green;
+	color: black;
+	padding: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#cal table {
+	clear: both;
+}
+
+#cal table caption {
+	font-weight: bold;
+	font-size: 14pt;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: rgb(150,50,150);
+}
+
+#cal table th {
+	text-align: right;
+}
+
+#cal table th, #cal table td {
+	width: 2em;
+	padding: 4px;
+}
+
+#cal table td {
+	color: rgb(178,184,183);
+	text-align: right;
+	cursor: pointer;
+}
+
+#prev {
+	float: left;
+	padding: 4px;
+	cursor: pointer;
+}
+
+#next {
+	float: right;
+	padding: 4px;
+	cursor: pointer;
+}
+
+#cal table td.futuredate {
+	color: white;
+}
+
+#cal table td.futuredate:hover, #prev:hover, #next:hover, #close:hover {
+	background: rgb(150,50,150);
+	color: black;
+}
+
+#cal table td.pastdate {
+	color: white;
+}
+
+#cal table td.pastdate:hover, #prev:hover, #next:hover, #close:hover {
+	background: rgb(150,50,150);
+	color: black;
+}
+
+#close {
+	color: black;
+	float: right;
+	padding: 0 4px;
+	cursor: pointer;
+}
+
+#close span {
+	font-size: 20pt;
+}
+
 /* Table stuff */
 article table {
-   width: 100%;
-   text-align: center;
-   table-layout: fixed;
+	width: 640px;
+	text-align: center;
+	table-layout: fixed;
 }
 
 article table caption {
-   padding: 5px;
-   width: 300px;
+	padding: 5px;
+	width: 300px;
 }
 
 article tr td:first-child, article tr td:last-child {
-   background: #DDDDDD;
+	background: #DDDDDD;
 }
 
 article th, article td {
-   border: 2px solid black;
-   border-collapse: collapse;
-   padding: 5px;
-   width: 14.2857%;
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	width: 14.2857%;
 }
 
 article tr td:first-of-type, article tr th:first-of-type {
-   border-left: 0;
+	border-left: 1;
 }
 
 article tr td:last-of-type, article tr th:last-of-type {
-   border-right: 0;
+	border-right: 1;
 }
 
 article th {
-   font-weight: 700;
-   background: #EFE0B9;
+	font-weight: 700;
+	background: pink;
 }
 
 article td p:first-of-type {
-   font-weight: 900;
-   text-align: right;
-}
-
-article div h3 {
-	color: darkblue;
+	font-weight: 900;
+	text-align: right;
 }
 
 article div p {
@@ -258,29 +423,36 @@ article div a:link {
 	font-weight: bold;
 }
 
-h2 {
-	font-size: 1.9em;
-	font-weight: bold;
-	margin: 5px;
+
+/* profile section */
+#profile {
+	float: center;
+	width: 260px;
+	border: 1px solid black;
+	background: green;
+	padding: 20px;
+/*   background: rgb(216,217,219);*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: none;
 }
 
-h3 {
-	font-size: 1.5em;
-	font-weight: bold;
-	margin: 4px;
-	text-align: left;
+#profile li, #profile p {
+	text-indent: 1em;
+	margin-top: 5px;
 }
 
 
 /* form */
 form {
-	width: 720px;
-	margin: 0 auto;
+	width: 820px;
+	margin: 10 auto;
 }
 
 form fieldset{
-	border: none; 
-	background: green;
+	border: 2px; 
+	/*background: green;*/
 	position: relative;
 }
 
@@ -291,7 +463,7 @@ form legend {
 }
 
 form legend span {
-	position: relative;
+	position: center;
 	top: 10px;
 }
 
@@ -299,18 +471,20 @@ form label {
 	display: block;
 	font-size: 1.2em;
 	width: 530px;
-	text-align: right;
+	text-align: center;
 }
+
 form label p {
 	float: left;
 	width: 100%;
-	text-align: right;
+	text-align: center;
 }
 
 form label p:nth-child(2) {
 	font-size: 0.8em;
 }
 
+/*
 form input {
 	padding: 1%;
 	background: #333;
@@ -324,7 +498,7 @@ form input {
 	margin-bottom: 20px;
 	position: relative;
 	top: -0.4em;
-}
+}*/
 
 form input[type="checkbox"] {
 	position: static;
@@ -337,7 +511,7 @@ article figure img {
 
 /* footer of the page */
 footer {
-	background: rgb(40,60,80);
+	background: #41A317;
 	width: 100%;
 	clear: both;
 	font-size: 18px;
