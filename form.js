@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 11/21/2016
+Date: 11/30/2016
 Filename: form.js
 */
 
@@ -11,6 +11,66 @@ Filename: form.js
 /*	global variables */
 var formValidity = true;
 var err404 = "images/error404.jpg";
+
+
+/*	validate form */
+function validateForm(evt) {
+/*	if (evt.preventDefault) {
+		evt.preventDefault(); // prevent form from submitting
+	} else {
+		evt.returnValue = false; // prevent form from submitting in IE8
+	}*/
+	evt.preventDefault();
+	
+	formValidity = true; // reset value for revalidation
+	var inputElements = document.querySelectorAll("#datamine input");
+	var elementCount = inputElements.length;
+	
+	try {
+		for (var i = 0; i < elementCount; i++) {
+			if (inputElements[i].value === "") {
+				inputElements[i].style.background = "rgb(255,233,233)";
+				formValidity = false;
+			} else {
+				inputElements[i].style.background = "";
+			}
+		}
+		
+		if (formValidity === false) {
+			throw "You better Tech yourself, before you reck yourself!";
+		}
+		$("#errorText").hide();
+		$("#errorText").html("");
+		$("#errorPic").hide();
+	}
+	catch(msg) {
+		$("#errorText").show();
+		$("#errorText").html(msg);
+//		$("#errorPic").show(err404); // doesn't work this way.
+		document.getElementById("errorPic").src = err404;
+	}
+	
+	if (formValidity === true) {
+		$("form").submit();
+	}
+	
+	validateName("names");
+	validateDoctor();
+	validateMessage();
+	validateAge();
+	
+/*	if (formValidity === true) {
+		document.getElementById("errorText").innerHTML = "";
+		document.getElementById("errorText").style.display = "none";
+		document.getElementsByTagName("form")[0].submit();
+	} else {
+		document.getElementById("errorText").innerHTML = "You better Tech yourself, before you reck yourself!";
+		document.getElementById("errorText").style.display = "block";
+		document.getElementById("errorPic").src = err404;
+		scroll(0,0);
+	}*/
+	
+}
 
 
 /*	remove default values and formatting from state and delivery date selection lists */
@@ -197,32 +257,6 @@ function validateAge(){
 			errorDiv.innerHTML = "The age box " + msg;
 		}
 		formValidity = false;
-	}
-}
-
-
-/*	validate form */
-function validateForm(evt) {
-	if (evt.preventDefault) {
-		evt.preventDefault(); // prevent form from submitting
-	} else {
-		evt.returnValue = false; // prevent form from submitting in IE8
-	}
-	formValidity = true; // reset value for revalidation
-	validateName("names");
-	validateDoctor();
-	validateMessage();
-	validateAge();
-	
-	if (formValidity === true) {
-		document.getElementById("errorText").innerHTML = "";
-		document.getElementById("errorText").style.display = "none";
-		document.getElementsByTagName("form")[0].submit();
-	} else {
-		document.getElementById("errorText").innerHTML = "You better Tech yourself, before you reck yourself!";
-		document.getElementById("errorText").style.display = "block";
-		document.getElementById("errorPic").src = err404;
-		scroll(0,0);
 	}
 }
 

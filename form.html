@@ -4,7 +4,7 @@
 	<!--
 	CIS166AA: Case Project
 	Author: Kevin Ward
-	Date: 11/21/2016
+	Date: 11/30/2016
 	Filename: form.html
 	-->
 	<meta charset="utf-8">
@@ -26,18 +26,26 @@
 			</header>
 			
 			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
-					<li><a href="docwho.html">Doctor Who</a></li>
-					<li><a href="feedback.html">Feedback</a></li>
-					<li><a href="vgm.html">Games & Movies</a></li>
-					<li><a href="geoloc.html">GeoLocate</a></li>
-					<li id="currpage"><a href="form.html">Random Form</a></li>
-					<li><a href="realm.html">WoW Realm List</a></li>
-					<li><a href="time.html">TARDIS Entry</a></li>
-					<li><a href="websec.html">Web Security</a></li>
-					<li><a href="about.html">About Me</a></li>
+				<ul class="mainmenu">
+					<li><p><a href="#">Fun Stuff</a></p>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="dbzpl.html">DBZ PwrLvl</a></li>
+							<li><a href="docwho.html">Doctor Who</a></li>
+							<li><a href="vgm.html">Games & Movies</a></li>
+							<li><a href="realm.html">WoW Realm List</a></li>
+							<li><a href="time.html">TARDIS Entry</a></li>
+						</ul>
+					</li>
+					<li><p>Forms & Documents</p>
+						<ul>
+							<li><a href="feedback.html">Feedback</a></li>
+							<li><a href="geoloc.html">GeoLocate</a></li>
+							<li id="currpage"><a href="form.html">Random Form</a></li>
+							<li><a href="websec.html">Web Security</a></li>
+							<li><a href="about.html">About Me</a></li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 		
@@ -46,13 +54,14 @@
 				<li><p>Random Form: <span id="randomform"></span></p></li>
 				<li><div id="errorText"></div></li>
 				<li><img src="images/pixel.png" width="240" height="190" alt="Error Picture" title="Error Picture" id="errorPic"></li>
+				<!--<li><img src="images/pixel.png" id="errorPic"></li>-->
 			</ul>
 		</aside>
 		
 		<article>			
 			<div>
 			<form action="formdone.html" novalidate="novalidate">
-				<fieldset>
+				<fieldset id="datamine">
 				<legend><h2><span>Order Form</span></h2></legend><br>
 					
 					<fieldset id="names" class="text">
@@ -146,6 +155,8 @@
 		</footer>
 		
 		</div>
+		<script src="jquery-3.1.1.js"></script>
+		<script src="jsq.js"></script>
 		<script src="form.js"></script>
 	</body>
 </html>

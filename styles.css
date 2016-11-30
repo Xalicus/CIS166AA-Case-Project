@@ -1,7 +1,7 @@
 /*
 CIS166AA: Case Project
 Author: Kevin Ward
-Date: 11/21/2016
+Date: 11/30/2016
 Filename: styles.css
 */
 
@@ -128,9 +128,11 @@ header h1 p {
 
 /* navigation of the page */
 nav {
+	float: left;
 	background-color: #41A317;
 	padding: 7px 10px;
 	width: 100%;
+	height: 45px;
 	font-size: 14px;
 	text-align: center;
 	color: #000000;
@@ -145,14 +147,18 @@ nav #currpage {
 nav ul {
 	margin-top: 0px;
 	margin-left: 0px;
+	width: 100%;
 	text-align: center;
 }
 
 nav ul li {
-	display: inline-block;
+	
+	display: block; /*inline-block;*/
 	padding: 7px 10px;
 	background: #B5EAAA;
 	color: #000000;
+	width: 200px;
+	float: left;
 /*	-moz-border-radius-topleft: 10px;
 	-moz-border-radius-topright: 10px;
 	-webkit-border-top-left-radius: 10px;
@@ -163,10 +169,37 @@ nav ul li {
 }
 
 /* the current page being displayed. */
+/*
 nav ul #currpage {
 	background: #728C00;
 	color: #000000;
+}*/
+
+nav ul ul {
+   position: relative;
+   z-index: 10;
+   display: none;
+   background: #B5EAAA /*rgb(33,46,65);*/
 }
+
+nav ul ul.show {
+   display: block;
+}
+
+nav ul ul li {
+   clear: left;
+   text-align: left;
+   line-height: normal;
+   height: auto;
+   padding: 0.4em;
+   border: 2px solid rgb(33,46,65);
+}
+
+nav ul ul li:hover {
+   color: #000000;
+   background: #728C00;
+}
+
 
 /* sidebar */
 aside {
